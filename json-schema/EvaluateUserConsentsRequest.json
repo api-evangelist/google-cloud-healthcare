@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EvaluateUserConsentsRequest",
+  "description": "Evaluate a user's Consents for all matching User data mappings. Note: User data mappings are indexed asynchronously, causing slight delays between the time mappings are created or updated and when they are included in EvaluateUserConsents results.",
+  "properties": {
+    "consentList": {
+      "$ref": "#/components/schemas/ConsentList",
+      "description": "Optional. Specific Consents to evaluate the access request against. These Consents must have the same `user_id` as the User data mappings being evalauted, must exist in the current `consent_store`, and must have a `state` of either `ACTIVE` or `DRAFT`. A maximum of 100 Consents can be provided here. If unspecified, all `ACTIVE` unexpired Consents in the current `consent_store` will be evaluated."
+    },
+    "pageSize": {
+      "description": "Optional. Limit on the number of User data mappings to return in a single response. If not specified, 100 is used. May not be larger than 1000.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "pageToken": {
+      "description": "Optional. Token to retrieve the next page of results, or empty to get the first page.",
+      "type": "string"
+    },
+    "requestAttributes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Required. The values of request attributes associated with this access request.",
+      "type": "object"
+    },
+    "resourceAttributes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Optional. The values of resource attributes associated with the resources being requested. If no values are specified, then all resources are queried.",
+      "type": "object"
+    },
+    "responseView": {
+      "description": "Optional. The view for EvaluateUserConsentsResponse. If unspecified, defaults to `BASIC` and returns `consented` as `TRUE` or `FALSE`.",
+      "enum": [
+        "RESPONSE_VIEW_UNSPECIFIED",
+        "BASIC",
+        "FULL"
+      ],
+      "type": "string"
+    },
+    "userId": {
+      "description": "Required. User ID to evaluate consents for.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

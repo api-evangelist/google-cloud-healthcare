@@ -1,0 +1,83 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "healthcare": "https://cloud.google.com/healthcare-api/docs/reference/rest/v1/",
+    "fhir": "http://hl7.org/fhir/",
+    "dicom": "http://dicom.nema.org/",
+    "hipaa": "https://www.hhs.gov/hipaa/",
+    "gcp": "https://cloud.google.com/",
+    "name": "name",
+    "description": "description",
+    "url": "url"
+  },
+  "@type": "WebAPI",
+  "@id": "https://healthcare.googleapis.com/",
+  "name": "Google Cloud Healthcare API",
+  "description": "A fully managed, HIPAA-eligible service for ingesting, storing, analyzing, and integrating healthcare data in Google Cloud.",
+  "url": "https://cloud.google.com/healthcare-api",
+  "provider": {
+    "@type": "Organization",
+    "name": "Google",
+    "url": "https://google.com"
+  },
+  "documentation": "https://cloud.google.com/healthcare-api/docs",
+  "termsOfService": "https://developers.google.com/terms/",
+  "license": "https://creativecommons.org/licenses/by/3.0/",
+  "category": [
+    "Healthcare",
+    "FHIR",
+    "HL7v2",
+    "DICOM",
+    "Medical Imaging",
+    "Data Interoperability"
+  ],
+  "hasAPI": [
+    {
+      "@type": "WebAPI",
+      "@id": "healthcare:projects.locations.datasets.fhirStores",
+      "name": "Cloud Healthcare FHIR API",
+      "description": "Managed FHIR R4/STU3/DSTU2 data repository for storing and querying clinical resources.",
+      "conformsTo": "fhir:R4",
+      "url": "https://cloud.google.com/healthcare-api/docs/how-tos/fhir"
+    },
+    {
+      "@type": "WebAPI",
+      "@id": "healthcare:projects.locations.datasets.hl7V2Stores",
+      "name": "Cloud Healthcare HL7v2 API",
+      "description": "Managed ingestion and storage of HL7 version 2.x clinical messages.",
+      "url": "https://cloud.google.com/healthcare-api/docs/how-tos/hl7v2"
+    },
+    {
+      "@type": "WebAPI",
+      "@id": "healthcare:projects.locations.datasets.dicomStores",
+      "name": "Cloud Healthcare DICOM API",
+      "description": "DICOMweb-compliant storage and retrieval of medical imaging studies.",
+      "conformsTo": "dicom:PS3.18",
+      "url": "https://cloud.google.com/healthcare-api/docs/how-tos/dicom"
+    },
+    {
+      "@type": "WebAPI",
+      "@id": "healthcare:projects.locations.datasets.consentStores",
+      "name": "Cloud Healthcare Consent Management API",
+      "description": "Patient-centric consent policy management and enforcement for healthcare data access.",
+      "url": "https://cloud.google.com/healthcare-api/docs/how-tos/consent-management"
+    },
+    {
+      "@type": "WebAPI",
+      "@id": "healthcare:projects.locations.datasets.deidentify",
+      "name": "Cloud Healthcare De-identification API",
+      "description": "Automated PHI/PII redaction and transformation aligned with HIPAA Safe Harbor and Expert Determination methods.",
+      "url": "https://cloud.google.com/healthcare-api/docs/how-tos/deidentify"
+    }
+  ],
+  "compliance": {
+    "@type": "CreativeWork",
+    "name": "HIPAA Eligibility",
+    "url": "https://cloud.google.com/healthcare-api/docs/concepts/hipaa",
+    "description": "Google Cloud Healthcare API is a HIPAA-eligible service covered under Google Cloud's BAA."
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://healthcare.googleapis.com/"
+  }
+}

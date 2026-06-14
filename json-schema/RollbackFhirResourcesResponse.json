@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RollbackFhirResourcesResponse",
+  "description": "Final response of rollback FIHR resources request.",
+  "properties": {
+    "fhirStore": {
+      "description": "The name of the FHIR store to rollback, in the format of \"projects/{project_id}/locations/{location_id}/datasets/{dataset_id} /fhirStores/{fhir_store_id}\".",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

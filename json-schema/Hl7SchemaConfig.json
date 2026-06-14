@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Hl7SchemaConfig",
+  "description": "Root config message for HL7v2 schema. This contains a schema structure of groups and segments, and filters that determine which messages to apply the schema structure to.",
+  "properties": {
+    "messageSchemaConfigs": {
+      "additionalProperties": {
+        "$ref": "#/components/schemas/SchemaGroup"
+      },
+      "description": "Map from each HL7v2 message type and trigger event pair, such as ADT_A04, to its schema configuration root group.",
+      "type": "object"
+    },
+    "version": {
+      "description": "Each VersionSource is tested and only if they all match is the schema used for the message.",
+      "items": {
+        "$ref": "#/components/schemas/VersionSource"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EntityMentionRelationship",
+  "description": "Defines directed relationship from one entity mention to another.",
+  "properties": {
+    "confidence": {
+      "description": "The model's confidence in this annotation. A number between 0 and 1.",
+      "format": "double",
+      "type": "number"
+    },
+    "objectId": {
+      "description": "object_id is the id of the object entity mention.",
+      "type": "string"
+    },
+    "subjectId": {
+      "description": "subject_id is the id of the subject entity mention.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

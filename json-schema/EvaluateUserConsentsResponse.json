@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EvaluateUserConsentsResponse",
+  "properties": {
+    "nextPageToken": {
+      "description": "Token to retrieve the next page of results, or empty if there are no more results in the list. This token is valid for 72 hours after it is created.",
+      "type": "string"
+    },
+    "results": {
+      "description": "The consent evaluation result for each `data_id`.",
+      "items": {
+        "$ref": "#/components/schemas/Result"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

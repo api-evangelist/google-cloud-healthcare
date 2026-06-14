@@ -1,0 +1,17 @@
+{
+  "labels": {},
+  "name": "example-string",
+  "notificationConfigs": [
+    {
+      "filter": {},
+      "pubsubTopic": {}
+    }
+  ],
+  "parserConfig": {
+    "allowNullHeader": true,
+    "schema": {},
+    "segmentTerminator": "example-string",
+    "version": "PARSER_VERSION_UNSPECIFIED"
+  },
+  "rejectDuplicateMessage": true
+}

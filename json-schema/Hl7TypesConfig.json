@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Hl7TypesConfig",
+  "description": "Root config for HL7v2 datatype definitions for a specific HL7v2 version.",
+  "properties": {
+    "type": {
+      "description": "The HL7v2 type definitions.",
+      "items": {
+        "$ref": "#/components/schemas/Type"
+      },
+      "type": "array"
+    },
+    "version": {
+      "description": "The version selectors that this config applies to. A message must match ALL version sources to apply.",
+      "items": {
+        "$ref": "#/components/schemas/VersionSource"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

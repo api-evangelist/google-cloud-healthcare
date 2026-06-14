@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ListMessagesResponse",
+  "description": "Lists the messages in the specified HL7v2 store.",
+  "properties": {
+    "hl7V2Messages": {
+      "description": "The returned Messages. Won't be more Messages than the value of page_size in the request. See view for populated fields.",
+      "items": {
+        "$ref": "#/components/schemas/Message"
+      },
+      "type": "array"
+    },
+    "nextPageToken": {
+      "description": "Token to retrieve the next page of results or empty if there are no more results in the list.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

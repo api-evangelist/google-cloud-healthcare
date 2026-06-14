@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InfoTypeTransformation",
+  "description": "A transformation to apply to text that is identified as a specific info_type.",
+  "properties": {
+    "characterMaskConfig": {
+      "$ref": "#/components/schemas/CharacterMaskConfig",
+      "description": "Config for character mask."
+    },
+    "cryptoHashConfig": {
+      "$ref": "#/components/schemas/CryptoHashConfig",
+      "description": "Config for crypto hash."
+    },
+    "dateShiftConfig": {
+      "$ref": "#/components/schemas/DateShiftConfig",
+      "description": "Config for date shift."
+    },
+    "infoTypes": {
+      "description": "InfoTypes to apply this transformation to. If this is not specified, the transformation applies to any info_type.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "redactConfig": {
+      "$ref": "#/components/schemas/RedactConfig",
+      "description": "Config for text redaction."
+    },
+    "replaceWithInfoTypeConfig": {
+      "$ref": "#/components/schemas/ReplaceWithInfoTypeConfig",
+      "description": "Config for replace with InfoType."
+    }
+  },
+  "type": "object"
+}

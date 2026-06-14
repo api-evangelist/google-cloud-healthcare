@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GoogleCloudHealthcareV1FhirGcsDestination",
+  "description": "The configuration for exporting to Cloud Storage.",
+  "properties": {
+    "uriPrefix": {
+      "description": "URI for a Cloud Storage directory where result files should be written, in the format of `gs://{bucket-id}/{path/to/destination/dir}`. If there is no trailing slash, the service appends one when composing the object path. The user is responsible for creating the Cloud Storage bucket referenced in `uri_prefix`.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

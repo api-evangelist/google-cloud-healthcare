@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SchemaPackage",
+  "description": "A schema package contains a set of schemas and type definitions.",
+  "properties": {
+    "ignoreMinOccurs": {
+      "description": "Flag to ignore all min_occurs restrictions in the schema. This means that incoming messages can omit any group, segment, field, component, or subcomponent.",
+      "type": "boolean"
+    },
+    "schemas": {
+      "description": "Schema configs that are layered based on their VersionSources that match the incoming message. Schema configs present in higher indices override those in lower indices with the same message type and trigger event if their VersionSources all match an incoming message.",
+      "items": {
+        "$ref": "#/components/schemas/Hl7SchemaConfig"
+      },
+      "type": "array"
+    },
+    "schematizedParsingType": {
+      "description": "Determines how messages that fail to parse are handled.",
+      "enum": [
+        "SCHEMATIZED_PARSING_TYPE_UNSPECIFIED",
+        "SOFT_FAIL",
+        "HARD_FAIL"
+      ],
+      "type": "string"
+    },
+    "types": {
+      "description": "Schema type definitions that are layered based on their VersionSources that match the incoming message. Type definitions present in higher indices override those in lower indices with the same type name if their VersionSources all match an incoming message.",
+      "items": {
+        "$ref": "#/components/schemas/Hl7TypesConfig"
+      },
+      "type": "array"
+    },
+    "unexpectedSegmentHandling": {
+      "description": "Determines how unexpected segments (segments not matched to the schema) are handled.",
+      "enum": [
+        "UNEXPECTED_SEGMENT_HANDLING_MODE_UNSPECIFIED",
+        "FAIL",
+        "SKIP",
+        "PARSE"
+      ],
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

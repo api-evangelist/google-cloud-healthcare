@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Feature",
+  "description": "A feature of an entity mention.",
+  "properties": {
+    "confidence": {
+      "description": "The model's confidence in this feature annotation. A number between 0 and 1.",
+      "format": "double",
+      "type": "number"
+    },
+    "value": {
+      "description": "The value of this feature annotation. Its range depends on the type of the feature.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

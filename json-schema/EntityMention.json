@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EntityMention",
+  "description": "An entity mention in the document.",
+  "properties": {
+    "certaintyAssessment": {
+      "$ref": "#/components/schemas/Feature",
+      "description": "The certainty assessment of the entity mention. Its value is one of: LIKELY, SOMEWHAT_LIKELY, UNCERTAIN, SOMEWHAT_UNLIKELY, UNLIKELY, CONDITIONAL"
+    },
+    "confidence": {
+      "description": "The model's confidence in this entity mention annotation. A number between 0 and 1.",
+      "format": "double",
+      "type": "number"
+    },
+    "linkedEntities": {
+      "description": "linked_entities are candidate ontological concepts that this entity mention may refer to. They are sorted by decreasing confidence.",
+      "items": {
+        "$ref": "#/components/schemas/LinkedEntity"
+      },
+      "type": "array"
+    },
+    "mentionId": {
+      "description": "mention_id uniquely identifies each entity mention in a single response.",
+      "type": "string"
+    },
+    "subject": {
+      "$ref": "#/components/schemas/Feature",
+      "description": "The subject this entity mention relates to. Its value is one of: PATIENT, FAMILY_MEMBER, OTHER"
+    },
+    "temporalAssessment": {
+      "$ref": "#/components/schemas/Feature",
+      "description": "How this entity mention relates to the subject temporally. Its value is one of: CURRENT, CLINICAL_HISTORY, FAMILY_HISTORY, UPCOMING, ALLERGY"
+    },
+    "text": {
+      "$ref": "#/components/schemas/TextSpan",
+      "description": "text is the location of the entity mention in the document."
+    },
+    "type": {
+      "description": "The semantic type of the entity: UNKNOWN_ENTITY_TYPE, ALONE, ANATOMICAL_STRUCTURE, ASSISTED_LIVING, BF_RESULT, BM_RESULT, BM_UNIT, BM_VALUE, BODY_FUNCTION, BODY_MEASUREMENT, COMPLIANT, DOESNOT_FOLLOWUP, FAMILY, FOLLOWSUP, LABORATORY_DATA, LAB_RESULT, LAB_UNIT, LAB_VALUE, MEDICAL_DEVICE, MEDICINE, MED_DOSE, MED_DURATION, MED_FORM, MED_FREQUENCY, MED_ROUTE, MED_STATUS, MED_STRENGTH, MED_TOTALDOSE, MED_UNIT, NON_COMPLIANT, OTHER_LIVINGSTATUS, PROBLEM, PROCEDURE, PROCEDURE_RESULT, PROC_METHOD, REASON_FOR_NONCOMPLIANCE, SEVERITY, SUBSTANCE_ABUSE, UNCLEAR_FOLLOWUP.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

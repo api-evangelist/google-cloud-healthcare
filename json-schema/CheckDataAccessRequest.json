@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CheckDataAccessRequest",
+  "description": "Checks if a particular data_id of a User data mapping in the given consent store is consented for a given use.",
+  "properties": {
+    "consentList": {
+      "$ref": "#/components/schemas/ConsentList",
+      "description": "Optional. Specific Consents to evaluate the access request against. These Consents must have the same `user_id` as the evaluated User data mapping, must exist in the current `consent_store`, and have a `state` of either `ACTIVE` or `DRAFT`. A maximum of 100 Consents can be provided here. If no selection is specified, the access request is evaluated against all `ACTIVE` unexpired Consents with the same `user_id` as the evaluated User data mapping."
+    },
+    "dataId": {
+      "description": "Required. The unique identifier of the resource to check access for. This identifier must correspond to a User data mapping in the given consent store.",
+      "type": "string"
+    },
+    "requestAttributes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "The values of request attributes associated with this access request.",
+      "type": "object"
+    },
+    "responseView": {
+      "description": "Optional. The view for CheckDataAccessResponse. If unspecified, defaults to `BASIC` and returns `consented` as `TRUE` or `FALSE`.",
+      "enum": [
+        "RESPONSE_VIEW_UNSPECIFIED",
+        "BASIC",
+        "FULL"
+      ],
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

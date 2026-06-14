@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Hl7V2StoreMetric",
+  "description": "Count of messages and total storage size by type for a given HL7 store.",
+  "properties": {
+    "count": {
+      "description": "The total count of HL7v2 messages in the store for the given message type.",
+      "format": "int64",
+      "type": "string"
+    },
+    "messageType": {
+      "description": "The Hl7v2 message type this metric applies to, such as `ADT` or `ORU`.",
+      "type": "string"
+    },
+    "structuredStorageSizeBytes": {
+      "description": "The total amount of structured storage used by HL7v2 messages of this message type in the store.",
+      "format": "int64",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

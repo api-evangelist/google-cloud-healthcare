@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TestIamPermissionsResponse",
+  "description": "Response message for `TestIamPermissions` method.",
+  "properties": {
+    "permissions": {
+      "description": "A subset of `TestPermissionsRequest.permissions` that the caller is allowed.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

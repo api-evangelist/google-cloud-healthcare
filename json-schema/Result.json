@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Result",
+  "description": "The consent evaluation result for a single `data_id`.",
+  "properties": {
+    "consentDetails": {
+      "additionalProperties": {
+        "$ref": "#/components/schemas/ConsentEvaluation"
+      },
+      "description": "The resource names of all evaluated Consents mapped to their evaluation.",
+      "type": "object"
+    },
+    "consented": {
+      "description": "Whether the resource is consented for the given use.",
+      "type": "boolean"
+    },
+    "dataId": {
+      "description": "The unique identifier of the evaluated resource.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

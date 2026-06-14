@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ListConsentStoresResponse",
+  "properties": {
+    "consentStores": {
+      "description": "The returned consent stores. The maximum number of stores returned is determined by the value of page_size in the ListConsentStoresRequest.",
+      "items": {
+        "$ref": "#/components/schemas/ConsentStore"
+      },
+      "type": "array"
+    },
+    "nextPageToken": {
+      "description": "Token to retrieve the next page of results, or empty if there are no more results in the list.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

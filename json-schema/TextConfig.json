@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TextConfig",
+  "properties": {
+    "additionalTransformations": {
+      "description": "Transformations to apply to the detected data, overridden by `exclude_info_types`.",
+      "items": {
+        "$ref": "#/components/schemas/InfoTypeTransformation"
+      },
+      "type": "array"
+    },
+    "excludeInfoTypes": {
+      "description": "InfoTypes to skip transforming, overriding `additional_transformations`.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "transformations": {
+      "description": "The transformations to apply to the detected data. Deprecated. Use `additional_transformations` instead.",
+      "items": {
+        "$ref": "#/components/schemas/InfoTypeTransformation"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

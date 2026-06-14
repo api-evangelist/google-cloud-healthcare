@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TextSpan",
+  "description": "A span of text in the provided document.",
+  "properties": {
+    "beginOffset": {
+      "description": "The unicode codepoint index of the beginning of this span.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "content": {
+      "description": "The original text contained in this span.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

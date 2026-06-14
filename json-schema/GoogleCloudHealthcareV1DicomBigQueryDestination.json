@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GoogleCloudHealthcareV1DicomBigQueryDestination",
+  "description": "The BigQuery table where the server writes the output.",
+  "properties": {
+    "force": {
+      "description": "Use `write_disposition` instead. If `write_disposition` is specified, this parameter is ignored. force=false is equivalent to write_disposition=WRITE_EMPTY and force=true is equivalent to write_disposition=WRITE_TRUNCATE.",
+      "type": "boolean"
+    },
+    "tableUri": {
+      "description": "BigQuery URI to a table, up to 2000 characters long, in the format `bq://projectId.bqDatasetId.tableId`",
+      "type": "string"
+    },
+    "writeDisposition": {
+      "description": "Determines whether the existing table in the destination is to be overwritten or appended to. If a write_disposition is specified, the `force` parameter is ignored.",
+      "enum": [
+        "WRITE_DISPOSITION_UNSPECIFIED",
+        "WRITE_EMPTY",
+        "WRITE_TRUNCATE",
+        "WRITE_APPEND"
+      ],
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

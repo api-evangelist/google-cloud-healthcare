@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ListHl7V2StoresResponse",
+  "description": "Lists the HL7v2 stores in the given dataset.",
+  "properties": {
+    "hl7V2Stores": {
+      "description": "The returned HL7v2 stores. Won't be more HL7v2 stores than the value of page_size in the request.",
+      "items": {
+        "$ref": "#/components/schemas/Hl7V2Store"
+      },
+      "type": "array"
+    },
+    "nextPageToken": {
+      "description": "Token to retrieve the next page of results or empty if there are no more results in the list.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

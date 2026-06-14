@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CheckDataAccessResponse",
+  "description": "Checks if a particular data_id of a User data mapping in the given consent store is consented for a given use.",
+  "properties": {
+    "consentDetails": {
+      "additionalProperties": {
+        "$ref": "#/components/schemas/ConsentEvaluation"
+      },
+      "description": "The resource names of all evaluated Consents mapped to their evaluation.",
+      "type": "object"
+    },
+    "consented": {
+      "description": "Whether the requested resource is consented for the given use.",
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}

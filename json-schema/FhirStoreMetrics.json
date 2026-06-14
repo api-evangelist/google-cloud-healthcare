@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FhirStoreMetrics",
+  "description": "List of metrics for a given FHIR store.",
+  "properties": {
+    "metrics": {
+      "description": "List of FhirStoreMetric by resource type.",
+      "items": {
+        "$ref": "#/components/schemas/FhirStoreMetric"
+      },
+      "type": "array"
+    },
+    "name": {
+      "description": "The resource name of the FHIR store to get metrics for, in the format `projects/{project_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

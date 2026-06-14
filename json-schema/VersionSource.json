@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VersionSource",
+  "description": "Describes a selector for extracting and matching an MSH field to a value.",
+  "properties": {
+    "mshField": {
+      "description": "The field to extract from the MSH segment. For example, \"3.1\" or \"18[1].1\".",
+      "type": "string"
+    },
+    "value": {
+      "description": "The value to match with the field. For example, \"My Application Name\" or \"2.3\".",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

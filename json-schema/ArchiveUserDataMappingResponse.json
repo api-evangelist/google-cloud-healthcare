@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ArchiveUserDataMappingResponse",
+  "description": "Archives the specified User data mapping.",
+  "properties": {},
+  "type": "object"
+}

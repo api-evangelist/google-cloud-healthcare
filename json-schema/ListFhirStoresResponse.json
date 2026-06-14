@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ListFhirStoresResponse",
+  "description": "Lists the FHIR stores in the given dataset.",
+  "properties": {
+    "fhirStores": {
+      "description": "The returned FHIR stores. Won't be more FHIR stores than the value of page_size in the request.",
+      "items": {
+        "$ref": "#/components/schemas/FhirStore"
+      },
+      "type": "array"
+    },
+    "nextPageToken": {
+      "description": "Token to retrieve the next page of results or empty if there are no more results in the list.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Resources",
+  "description": "A list of FHIR resources.",
+  "properties": {
+    "resources": {
+      "description": "List of resources IDs. For example, \"Patient/1234\".",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

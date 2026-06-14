@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PatientId",
+  "description": "A patient identifier and associated type.",
+  "properties": {
+    "type": {
+      "description": "ID type. For example, MRN or NHS.",
+      "type": "string"
+    },
+    "value": {
+      "description": "The patient's unique identifier.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

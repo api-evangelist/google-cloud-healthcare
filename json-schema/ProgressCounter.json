@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProgressCounter",
+  "description": "ProgressCounter provides counters to describe an operation's progress.",
+  "properties": {
+    "failure": {
+      "description": "The number of units that failed in the operation.",
+      "format": "int64",
+      "type": "string"
+    },
+    "pending": {
+      "description": "The number of units that are pending in the operation.",
+      "format": "int64",
+      "type": "string"
+    },
+    "success": {
+      "description": "The number of units that succeeded in the operation.",
+      "format": "int64",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

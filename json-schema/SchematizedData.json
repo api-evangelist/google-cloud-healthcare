@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SchematizedData",
+  "description": "The content of an HL7v2 message in a structured format as specified by a schema.",
+  "properties": {
+    "data": {
+      "description": "JSON output of the parser.",
+      "type": "string"
+    },
+    "error": {
+      "description": "The error output of the parser.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

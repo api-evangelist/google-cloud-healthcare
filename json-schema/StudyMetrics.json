@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StudyMetrics",
+  "description": "StudyMetrics contains metrics describing a DICOM study.",
+  "properties": {
+    "blobStorageSizeBytes": {
+      "description": "Total blob storage bytes for all instances in the study.",
+      "format": "int64",
+      "type": "string"
+    },
+    "instanceCount": {
+      "description": "Number of instances in the study.",
+      "format": "int64",
+      "type": "string"
+    },
+    "seriesCount": {
+      "description": "Number of series in the study.",
+      "format": "int64",
+      "type": "string"
+    },
+    "structuredStorageSizeBytes": {
+      "description": "Total structured storage bytes for all instances in the study.",
+      "format": "int64",
+      "type": "string"
+    },
+    "study": {
+      "description": "The study resource path. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}/dicomWeb/studies/{study_uid}`.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

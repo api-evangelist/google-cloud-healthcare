@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GcsDestination",
+  "description": "The Cloud Storage output destination. The Cloud Healthcare Service Agent requires the `roles/storage.objectAdmin` Cloud IAM roles on the Cloud Storage location.",
+  "properties": {
+    "contentStructure": {
+      "description": "The format of the exported HL7v2 message files.",
+      "enum": [
+        "CONTENT_STRUCTURE_UNSPECIFIED",
+        "MESSAGE_JSON"
+      ],
+      "type": "string"
+    },
+    "messageView": {
+      "description": "Specifies the parts of the Message resource to include in the export. If not specified, FULL is used.",
+      "enum": [
+        "MESSAGE_VIEW_UNSPECIFIED",
+        "RAW_ONLY",
+        "PARSED_ONLY",
+        "FULL",
+        "SCHEMATIZED_ONLY",
+        "BASIC"
+      ],
+      "type": "string"
+    },
+    "uriPrefix": {
+      "description": "URI of an existing Cloud Storage directory where the server writes result files, in the format `gs://{bucket-id}/{path/to/destination/dir}`. If there is no trailing slash, the service appends one when composing the object path.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

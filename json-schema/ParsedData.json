@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ParsedData",
+  "description": "The content of a HL7v2 message in a structured format.",
+  "properties": {
+    "segments": {
+      "items": {
+        "$ref": "#/components/schemas/Segment"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

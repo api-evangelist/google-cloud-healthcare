@@ -1,0 +1,7 @@
+{
+  "complexDataTypeReferenceParsing": "COMPLEX_DATA_TYPE_REFERENCE_PARSING_UNSPECIFIED",
+  "defaultSearchHandlingStrict": true,
+  "disableReferentialIntegrity": true,
+  "disableResourceVersioning": true,
+  "enableUpdateCreate": true
+}

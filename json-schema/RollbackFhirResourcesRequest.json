@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RollbackFhirResourcesRequest",
+  "properties": {
+    "changeType": {
+      "description": "Optional. CREATE/UPDATE/DELETE/ALL for reverting all txns of a certain type.",
+      "enum": [
+        "CHANGE_TYPE_UNSPECIFIED",
+        "ALL",
+        "CREATE",
+        "UPDATE",
+        "DELETE"
+      ],
+      "type": "string"
+    },
+    "excludeRollbacks": {
+      "description": "Optional. Specifies whether to exclude earlier rollbacks.",
+      "type": "boolean"
+    },
+    "filteringFields": {
+      "$ref": "#/components/schemas/RollbackFhirResourceFilteringFields",
+      "description": "Optional. Parameters for filtering resources"
+    },
+    "force": {
+      "description": "Optional. When enabled, changes will be reverted without explicit confirmation",
+      "type": "boolean"
+    },
+    "inputGcsObject": {
+      "description": "Optional. GCS object containing list of {resourceType}/{resourceId} lines, identifying resources to be reverted",
+      "type": "string"
+    },
+    "resultGcsBucket": {
+      "description": "Required. Bucket to deposit result",
+      "type": "string"
+    },
+    "rollbackTime": {
+      "description": "Required. Time point to rollback to.",
+      "format": "google-datetime",
+      "type": "string"
+    },
+    "type": {
+      "description": "Optional. If specified, revert only resources of these types",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

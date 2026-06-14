@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Signature",
+  "description": "User signature.",
+  "properties": {
+    "image": {
+      "$ref": "#/components/schemas/Image",
+      "description": "Optional. An image of the user's signature."
+    },
+    "metadata": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Optional. Metadata associated with the user's signature. For example, the user's name or the user's title.",
+      "type": "object"
+    },
+    "signatureTime": {
+      "description": "Optional. Timestamp of the signature.",
+      "format": "google-datetime",
+      "type": "string"
+    },
+    "userId": {
+      "description": "Required. User's UUID provided by the client.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

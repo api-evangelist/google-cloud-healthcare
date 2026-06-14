@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SeriesMetrics",
+  "description": "SeriesMetrics contains metrics describing a DICOM series.",
+  "properties": {
+    "blobStorageSizeBytes": {
+      "description": "Total blob storage bytes for all instances in the series.",
+      "format": "int64",
+      "type": "string"
+    },
+    "instanceCount": {
+      "description": "Number of instances in the series.",
+      "format": "int64",
+      "type": "string"
+    },
+    "series": {
+      "description": "The series resource path. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}/dicomWeb/studies/{study_uid}/series/{series_uid}`.",
+      "type": "string"
+    },
+    "structuredStorageSizeBytes": {
+      "description": "Total structured storage bytes for all instances in the series.",
+      "format": "int64",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

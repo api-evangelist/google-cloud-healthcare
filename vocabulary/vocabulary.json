@@ -1,0 +1,89 @@
+{
+  "vocabulary": {
+    "name": "Google Cloud Healthcare API Vocabulary",
+    "description": "Key terms and concepts used in the Google Cloud Healthcare API",
+    "source": "https://cloud.google.com/healthcare-api/docs",
+    "terms": [
+      {
+        "term": "FHIR",
+        "definition": "Fast Healthcare Interoperability Resources - a standard for exchanging healthcare information electronically, defined by HL7.",
+        "versions": ["DSTU2", "STU3", "R4"]
+      },
+      {
+        "term": "FhirStore",
+        "definition": "A managed FHIR data repository within a Cloud Healthcare dataset that stores and indexes FHIR resources.",
+        "resource_type": "projects.locations.datasets.fhirStores"
+      },
+      {
+        "term": "HL7v2",
+        "definition": "Health Level 7 version 2 - the most widely deployed healthcare messaging standard for exchanging clinical data between hospital systems.",
+        "resource_type": "projects.locations.datasets.hl7V2Stores"
+      },
+      {
+        "term": "DICOM",
+        "definition": "Digital Imaging and Communications in Medicine - a standard for medical imaging data storage and transmission.",
+        "resource_type": "projects.locations.datasets.dicomStores"
+      },
+      {
+        "term": "DICOMweb",
+        "definition": "A set of RESTful services for medical imaging: WADO-RS (retrieve), STOW-RS (store), QIDO-RS (query).",
+        "protocols": ["WADO-RS", "STOW-RS", "QIDO-RS"]
+      },
+      {
+        "term": "PHI",
+        "definition": "Protected Health Information - individually identifiable health information protected under HIPAA.",
+        "regulation": "HIPAA"
+      },
+      {
+        "term": "De-identification",
+        "definition": "The process of removing or transforming PHI and PII from healthcare data to protect patient privacy.",
+        "methods": ["Safe Harbor", "Expert Determination", "Date Shifting", "Text Redaction", "Image Pixel Anonymization"]
+      },
+      {
+        "term": "Consent",
+        "definition": "Patient authorization for the use and disclosure of their health information, managed via the Consent Management API.",
+        "resource_type": "projects.locations.datasets.consentStores"
+      },
+      {
+        "term": "Dataset",
+        "definition": "A top-level container in Cloud Healthcare API that holds FHIR stores, HL7v2 stores, DICOM stores, and consent stores.",
+        "resource_type": "projects.locations.datasets"
+      },
+      {
+        "term": "SMART on FHIR",
+        "definition": "A set of open specifications to integrate apps with Electronic Health Records using FHIR and OAuth2.",
+        "standard": "HL7 SMART Application Launch Framework"
+      },
+      {
+        "term": "HIPAA",
+        "definition": "Health Insurance Portability and Accountability Act - US law establishing national standards for protecting patient health information.",
+        "type": "regulation"
+      },
+      {
+        "term": "Pub/Sub",
+        "definition": "Google Cloud Pub/Sub - used for event-driven notifications when FHIR resources are created, updated, or deleted.",
+        "service": "Google Cloud Pub/Sub"
+      },
+      {
+        "term": "BigQuery Export",
+        "definition": "The ability to export FHIR resources or HL7v2 messages to Google BigQuery for analytics.",
+        "destination": "Google BigQuery"
+      },
+      {
+        "term": "Cloud DLP",
+        "definition": "Cloud Data Loss Prevention - Google Cloud service integrated with the de-identification API for advanced PHI inspection.",
+        "service": "Google Cloud DLP"
+      },
+      {
+        "term": "Attribute-based Access Control",
+        "definition": "A consent enforcement model where access to data is governed by attributes defined in consent policies.",
+        "related": "Consent Management API"
+      },
+      {
+        "term": "Transaction Bundle",
+        "definition": "A FHIR batch or transaction containing multiple FHIR operations executed atomically, limited to 4,500 entries.",
+        "limit": 4500
+      }
+    ]
+  }
+}

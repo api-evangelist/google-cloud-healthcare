@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ListUserDataMappingsResponse",
+  "properties": {
+    "nextPageToken": {
+      "description": "Token to retrieve the next page of results, or empty if there are no more results in the list.",
+      "type": "string"
+    },
+    "userDataMappings": {
+      "description": "The returned User data mappings. The maximum number of User data mappings returned is determined by the value of page_size in the ListUserDataMappingsRequest.",
+      "items": {
+        "$ref": "#/components/schemas/UserDataMapping"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ParserConfig",
+  "description": "The configuration for the parser. It determines how the server parses the messages.",
+  "properties": {
+    "allowNullHeader": {
+      "description": "Determines whether messages with no header are allowed.",
+      "type": "boolean"
+    },
+    "schema": {
+      "$ref": "#/components/schemas/SchemaPackage",
+      "description": "Schemas used to parse messages in this store, if schematized parsing is desired."
+    },
+    "segmentTerminator": {
+      "description": "Byte(s) to use as the segment terminator. If this is unset, '\\r' is used as segment terminator, matching the HL7 version 2 specification.",
+      "format": "byte",
+      "type": "string"
+    },
+    "version": {
+      "description": "Immutable. Determines the version of both the default parser to be used when `schema` is not given, as well as the schematized parser used when `schema` is specified. This field is immutable after HL7v2 store creation.",
+      "enum": [
+        "PARSER_VERSION_UNSPECIFIED",
+        "V1",
+        "V2",
+        "V3"
+      ],
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

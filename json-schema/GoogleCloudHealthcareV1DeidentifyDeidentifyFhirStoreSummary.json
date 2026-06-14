@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GoogleCloudHealthcareV1DeidentifyDeidentifyFhirStoreSummary",
+  "description": "Contains a summary of the DeidentifyFhirStore operation.",
+  "properties": {},
+  "type": "object"
+}

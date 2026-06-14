@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ActivateConsentRequest",
+  "description": "Activates the latest revision of the specified Consent by committing a new revision with `state` updated to `ACTIVE`. If the latest revision of the given Consent is in the `ACTIVE` state, no new revision is committed. A FAILED_PRECONDITION error occurs if the latest revision of the given consent is in the `REJECTED` or `REVOKED` state.",
+  "properties": {
+    "consentArtifact": {
+      "description": "Required. The resource name of the Consent artifact that contains documentation of the user's consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`. If the draft Consent had a Consent artifact, this Consent artifact overwrites it.",
+      "type": "string"
+    },
+    "expireTime": {
+      "description": "Timestamp in UTC of when this Consent is considered expired.",
+      "format": "google-datetime",
+      "type": "string"
+    },
+    "ttl": {
+      "description": "The time to live for this Consent from when it is marked as active.",
+      "format": "google-duration",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,6 @@
+{
+  "defaultConsentTtl": "example-string",
+  "enableConsentCreateOnUpdate": true,
+  "labels": {},
+  "name": "example-string"
+}

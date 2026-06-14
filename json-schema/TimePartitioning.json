@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TimePartitioning",
+  "description": "Configuration for FHIR BigQuery time-partitioned tables.",
+  "properties": {
+    "expirationMs": {
+      "description": "Number of milliseconds for which to keep the storage for a partition.",
+      "format": "int64",
+      "type": "string"
+    },
+    "type": {
+      "description": "Type of partitioning.",
+      "enum": [
+        "PARTITION_TYPE_UNSPECIFIED",
+        "HOUR",
+        "DAY",
+        "MONTH",
+        "YEAR"
+      ],
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

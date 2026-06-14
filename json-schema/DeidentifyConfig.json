@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DeidentifyConfig",
+  "description": "Configures de-id options specific to different types of content. Each submessage customizes the handling of an https://tools.ietf.org/html/rfc6838 media type or subtype. Configs are applied in a nested manner at runtime.",
+  "properties": {
+    "dicom": {
+      "$ref": "#/components/schemas/DicomConfig",
+      "description": "Configures de-id of application/DICOM content."
+    },
+    "fhir": {
+      "$ref": "#/components/schemas/FhirConfig",
+      "description": "Configures de-id of application/FHIR content."
+    },
+    "image": {
+      "$ref": "#/components/schemas/ImageConfig",
+      "description": "Configures de-identification of image pixels wherever they are found in the source_dataset."
+    },
+    "text": {
+      "$ref": "#/components/schemas/TextConfig",
+      "description": "Configures de-identification of text wherever it is found in the source_dataset."
+    },
+    "useRegionalDataProcessing": {
+      "description": "Ensures in-flight data remains in the region of origin during de-identification. Using this option results in a significant reduction of throughput, and is not compatible with `LOCATION` or `ORGANIZATION_NAME` infoTypes. `LOCATION` must be excluded within TextConfig, and must also be excluded within ImageConfig if image redaction is required.",
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}

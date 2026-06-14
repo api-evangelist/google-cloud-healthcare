@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ImportResourcesResponse",
+  "description": "Final response of importing resources. This structure is included in the response to describe the detailed outcome after the operation finishes successfully.",
+  "properties": {},
+  "type": "object"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ConsentEvaluation",
+  "description": "The detailed evaluation of a particular Consent.",
+  "properties": {
+    "evaluationResult": {
+      "description": "The evaluation result.",
+      "enum": [
+        "EVALUATION_RESULT_UNSPECIFIED",
+        "NOT_APPLICABLE",
+        "NO_MATCHING_POLICY",
+        "NO_SATISFIED_POLICY",
+        "HAS_SATISFIED_POLICY"
+      ],
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

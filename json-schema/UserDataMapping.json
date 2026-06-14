@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UserDataMapping",
+  "description": "Maps a resource to the associated user and Attributes.",
+  "properties": {
+    "archiveTime": {
+      "description": "Output only. Indicates the time when this mapping was archived.",
+      "format": "google-datetime",
+      "readOnly": true,
+      "type": "string"
+    },
+    "archived": {
+      "description": "Output only. Indicates whether this mapping is archived.",
+      "readOnly": true,
+      "type": "boolean"
+    },
+    "dataId": {
+      "description": "Required. A unique identifier for the mapped resource.",
+      "type": "string"
+    },
+    "name": {
+      "description": "Resource name of the User data mapping, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/userDataMappings/{user_data_mapping_id}`.",
+      "type": "string"
+    },
+    "resourceAttributes": {
+      "description": "Attributes of the resource. Only explicitly set attributes are displayed here. Attribute definitions with defaults set implicitly apply to these User data mappings. Attributes listed here must be single valued, that is, exactly one value is specified for the field \"values\" in each Attribute.",
+      "items": {
+        "$ref": "#/components/schemas/Attribute"
+      },
+      "type": "array"
+    },
+    "userId": {
+      "description": "Required. User's UUID provided by the client.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,7 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ImportDicomDataResponse",
+  "description": "Returns additional information in regards to a completed DICOM store import.",
+  "properties": {},
+  "type": "object"
+}

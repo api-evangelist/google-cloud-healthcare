@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IngestMessageRequest",
+  "description": "Ingests a message into the specified HL7v2 store.",
+  "properties": {
+    "message": {
+      "$ref": "#/components/schemas/Message",
+      "description": "Required. HL7v2 message to ingest."
+    }
+  },
+  "type": "object"
+}

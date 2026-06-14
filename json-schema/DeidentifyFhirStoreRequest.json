@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DeidentifyFhirStoreRequest",
+  "description": "Creates a new FHIR store with sensitive information de-identified.",
+  "properties": {
+    "config": {
+      "$ref": "#/components/schemas/DeidentifyConfig",
+      "description": "Deidentify configuration. Only one of `config` and `gcs_config_uri` can be specified."
+    },
+    "destinationStore": {
+      "description": "Required. The name of the FHIR store to create and write the redacted data to. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`. * The destination dataset must exist. * The source dataset and destination dataset must both reside in the same location. De-identifying data across multiple locations is not supported. * The destination FHIR store must exist. * The caller must have the healthcare.fhirResources.update permission to write to the destination FHIR store.",
+      "type": "string"
+    },
+    "gcsConfigUri": {
+      "description": "Cloud Storage location to read the JSON cloud.healthcare.deidentify.DeidentifyConfig from, overriding the default config. Must be of the form `gs://{bucket_id}/path/to/object`. The Cloud Storage location must grant the Cloud IAM role `roles/storage.objectViewer` to the project's Cloud Healthcare Service Agent service account. Only one of `config` and `gcs_config_uri` can be specified.",
+      "type": "string"
+    },
+    "resourceFilter": {
+      "$ref": "#/components/schemas/FhirFilter",
+      "description": "A filter specifying the resources to include in the output. If not specified, all resources are included in the output."
+    },
+    "skipModifiedResources": {
+      "description": "If true, skips resources that are created or modified after the de-identify operation is created.",
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}

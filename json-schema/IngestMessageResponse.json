@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IngestMessageResponse",
+  "description": "Acknowledges that a message has been ingested into the specified HL7v2 store.",
+  "properties": {
+    "hl7Ack": {
+      "description": "HL7v2 ACK message.",
+      "format": "byte",
+      "type": "string"
+    },
+    "message": {
+      "$ref": "#/components/schemas/Message",
+      "description": "Created message resource."
+    }
+  },
+  "type": "object"
+}

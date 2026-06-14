@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SchemaGroup",
+  "description": "An HL7v2 logical group construct.",
+  "properties": {
+    "choice": {
+      "description": "True indicates that this is a choice group, meaning that only one of its segments can exist in a given message.",
+      "type": "boolean"
+    },
+    "maxOccurs": {
+      "description": "The maximum number of times this group can be repeated. 0 or -1 means unbounded.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "members": {
+      "description": "Nested groups and/or segments.",
+      "items": {
+        "$ref": "#/components/schemas/GroupOrSegment"
+      },
+      "type": "array"
+    },
+    "minOccurs": {
+      "description": "The minimum number of times this group must be present/repeated.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "name": {
+      "description": "The name of this group. For example, \"ORDER_DETAIL\".",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

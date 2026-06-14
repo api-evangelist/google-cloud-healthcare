@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Field",
+  "description": "A (sub) field of a type.",
+  "properties": {
+    "maxOccurs": {
+      "description": "The maximum number of times this field can be repeated. 0 or -1 means unbounded.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "minOccurs": {
+      "description": "The minimum number of times this field must be present/repeated.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "name": {
+      "description": "The name of the field. For example, \"PID-1\" or just \"1\".",
+      "type": "string"
+    },
+    "table": {
+      "description": "The HL7v2 table this field refers to. For example, PID-15 (Patient's Primary Language) usually refers to table \"0296\".",
+      "type": "string"
+    },
+    "type": {
+      "description": "The type of this field. A Type with this name must be defined in an Hl7TypesConfig.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

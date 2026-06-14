@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ImportMessagesRequest",
+  "description": "Request to import messages.",
+  "properties": {
+    "gcsSource": {
+      "$ref": "#/components/schemas/GcsSource",
+      "description": "Cloud Storage source data location and import configuration. The Cloud Healthcare Service Agent requires the `roles/storage.objectViewer` Cloud IAM roles on the Cloud Storage location."
+    }
+  },
+  "type": "object"
+}

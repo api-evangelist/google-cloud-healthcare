@@ -1,0 +1,13 @@
+{
+  "labels": {},
+  "name": "example-string",
+  "notificationConfig": {
+    "pubsubTopic": "example-string",
+    "sendForBulkImport": true
+  },
+  "streamConfigs": [
+    {
+      "bigqueryDestination": {}
+    }
+  ]
+}

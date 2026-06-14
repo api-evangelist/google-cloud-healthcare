@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QueryAccessibleDataResponse",
+  "description": "Response for successful QueryAccessibleData operations. This structure is included in the response upon operation completion.",
+  "properties": {
+    "gcsUris": {
+      "description": "List of files, each of which contains a list of data_id(s) that are consented for a specified use in the request.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

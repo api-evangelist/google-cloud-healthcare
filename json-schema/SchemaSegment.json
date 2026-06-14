@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SchemaSegment",
+  "description": "An HL7v2 Segment.",
+  "properties": {
+    "maxOccurs": {
+      "description": "The maximum number of times this segment can be present in this group. 0 or -1 means unbounded.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "minOccurs": {
+      "description": "The minimum number of times this segment can be present in this group.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "type": {
+      "description": "The Segment type. For example, \"PID\".",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

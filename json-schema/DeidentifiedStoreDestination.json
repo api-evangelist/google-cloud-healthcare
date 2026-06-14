@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DeidentifiedStoreDestination",
+  "description": "Contains configuration for streaming de-identified FHIR export.",
+  "properties": {
+    "config": {
+      "$ref": "#/components/schemas/DeidentifyConfig",
+      "description": "The configuration to use when de-identifying resources that are added to this store."
+    },
+    "store": {
+      "description": "The full resource name of a Cloud Healthcare FHIR store, for example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

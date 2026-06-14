@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LinkedEntity",
+  "description": "EntityMentions can be linked to multiple entities using a LinkedEntity message lets us add other fields, e.g. confidence.",
+  "properties": {
+    "entityId": {
+      "description": "entity_id is a concept unique identifier. These are prefixed by a string that identifies the entity coding system, followed by the unique identifier within that system. For example, \"UMLS/C0000970\". This also supports ad hoc entities, which are formed by normalizing entity mention content.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RollbackFhirResourceFilteringFields",
+  "properties": {
+    "metadataFilter": {
+      "description": "Optional. A filter expression that matches data in the `Resource.meta` element. Supports all filters in [AIP-160](https://google.aip.dev/160) except the \"has\" (`:`) operator. Supports the following custom functions: * `tag(\"\") = \"\"` for tag filtering. * `extension_value_ts(\"\") = ` for filtering extensions with a timestamp, where `` is a Unix timestamp. Supports the `>`, `<`, `<=`, `>=`, and `!=` comparison operators.",
+      "type": "string"
+    },
+    "operationIds": {
+      "description": "Optional. A list of operation IDs to roll back.",
+      "items": {
+        "format": "uint64",
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

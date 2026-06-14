@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ImportResourcesRequest",
+  "description": "Request to import resources.",
+  "properties": {
+    "contentStructure": {
+      "description": "The content structure in the source location. If not specified, the server treats the input source files as BUNDLE.",
+      "enum": [
+        "CONTENT_STRUCTURE_UNSPECIFIED",
+        "BUNDLE",
+        "RESOURCE",
+        "BUNDLE_PRETTY",
+        "RESOURCE_PRETTY"
+      ],
+      "type": "string"
+    },
+    "gcsSource": {
+      "$ref": "#/components/schemas/GoogleCloudHealthcareV1FhirGcsSource",
+      "description": "Cloud Storage source data location and import configuration. The Healthcare Service Agent account requires the `roles/storage.objectAdmin` role on the Cloud Storage location. Each Cloud Storage object should be a text file that contains the format specified in ContentStructure."
+    }
+  },
+  "type": "object"
+}

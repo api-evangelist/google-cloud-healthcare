@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CharacterMaskConfig",
+  "description": "Mask a string by replacing its characters with a fixed character.",
+  "properties": {
+    "maskingCharacter": {
+      "description": "Character to mask the sensitive values. If not supplied, defaults to \"*\".",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
