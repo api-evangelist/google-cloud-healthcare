@@ -1,0 +1,181 @@
+aid: google-cloud-healthcare
+name: Google Cloud Healthcare
+description: >-
+  Google Cloud Healthcare API is a fully managed, HIPAA-eligible service for ingesting, storing,
+  analyzing, and integrating healthcare data in the cloud. It provides native support for FHIR R4
+  (Fast Healthcare Interoperability Resources), HL7v2 clinical event messaging, and DICOM medical
+  imaging standards, along with automated de-identification of protected health information (PHI).
+  The API enables healthcare organizations to build interoperable data pipelines, connect clinical
+  systems, and power machine learning applications on Google Cloud infrastructure.
+type: Index
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/google-cloud-healthcare/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Healthcare
+  - FHIR
+  - HL7v2
+  - DICOM
+  - Medical Imaging
+  - De-identification
+  - Interoperability
+  - Cloud
+apis:
+  - aid: google-cloud-healthcare:healthcare-fhir
+    name: Cloud Healthcare FHIR API
+    description: >-
+      The Cloud Healthcare FHIR API provides a fully managed implementation of the HL7 FHIR standard
+      (supporting DSTU2, STU3, and R4 versions) for storing and querying clinical and administrative
+      healthcare resources. It supports standard FHIR RESTful operations including create, read,
+      update, delete, search, and batch/transaction bundles. The API enables bulk export to Cloud
+      Storage and BigQuery, Patient-level consent enforcement, SMART on FHIR authorization, and
+      FHIR Pub/Sub notifications for event-driven architectures. Transaction bundles support up to
+      4,500 entries per bundle.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cloud.google.com/healthcare-api/docs/how-tos/fhir
+    baseURL: https://healthcare.googleapis.com
+    tags:
+      - FHIR
+      - Clinical Data
+      - Healthcare Interoperability
+      - R4
+      - STU3
+      - Patients
+      - Observations
+      - Encounters
+    properties:
+      - type: Documentation
+        url: https://cloud.google.com/healthcare-api/docs/how-tos/fhir
+      - type: ReferenceDocumentation
+        url: https://cloud.google.com/healthcare-api/docs/reference/rest/v1/projects.locations.datasets.fhirStores
+  - aid: google-cloud-healthcare:healthcare-hl7v2
+    name: Cloud Healthcare HL7v2 API
+    description: >-
+      The Cloud Healthcare HL7v2 API provides managed ingestion, storage, and retrieval of HL7
+      version 2.x messages, which are the most widely used standard for exchanging clinical data
+      between hospital information systems. It supports message parsing, filtering, and routing via
+      Pub/Sub notifications. The API enables integration with legacy EHR and hospital systems by
+      accepting raw HL7v2 messages and making them queryable through a RESTful interface. Messages
+      can be exported to Cloud Storage or BigQuery for downstream analytics. Individual messages
+      are limited to 10 MB (base64-encoded data field).
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cloud.google.com/healthcare-api/docs/how-tos/hl7v2
+    baseURL: https://healthcare.googleapis.com
+    tags:
+      - HL7v2
+      - Clinical Messaging
+      - Healthcare Integration
+      - EHR
+      - Hospital Systems
+    properties:
+      - type: Documentation
+        url: https://cloud.google.com/healthcare-api/docs/how-tos/hl7v2
+      - type: ReferenceDocumentation
+        url: https://cloud.google.com/healthcare-api/docs/reference/rest/v1/projects.locations.datasets.hl7V2Stores
+  - aid: google-cloud-healthcare:healthcare-dicom
+    name: Cloud Healthcare DICOM API
+    description: >-
+      The Cloud Healthcare DICOM API implements the DICOMweb standard for storing, querying, and
+      retrieving medical imaging data including X-rays, CT scans, MRIs, and ultrasounds. It supports
+      the WADO-RS (retrieve), STOW-RS (store), and QIDO-RS (query) DICOMweb transaction types
+      following the DICOM PS3.18 specification. The API enables secure cloud storage of imaging
+      studies with full metadata indexing, bulk import/export to Cloud Storage, and integration
+      with AI/ML pipelines for diagnostic imaging workloads. DICOM store transactions are unlimited
+      in size; all other methods are limited to 10 MB per request.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cloud.google.com/healthcare-api/docs/how-tos/dicom
+    baseURL: https://healthcare.googleapis.com
+    tags:
+      - DICOM
+      - Medical Imaging
+      - Radiology
+      - DICOMweb
+      - WADO-RS
+      - STOW-RS
+      - QIDO-RS
+    properties:
+      - type: Documentation
+        url: https://cloud.google.com/healthcare-api/docs/how-tos/dicom
+      - type: ReferenceDocumentation
+        url: https://cloud.google.com/healthcare-api/docs/reference/rest/v1/projects.locations.datasets.dicomStores
+  - aid: google-cloud-healthcare:healthcare-deidentify
+    name: Cloud Healthcare De-identification API
+    description: >-
+      The Cloud Healthcare De-identification API provides automated redaction and transformation of
+      protected health information (PHI) and personally identifiable information (PII) in FHIR
+      resources, DICOM instances, and unstructured text. It supports configurable de-identification
+      profiles aligned with HIPAA Safe Harbor and Expert Determination methods, including date
+      shifting, text redaction, image pixel anonymization, and cryptographic hashing of identifiers.
+      The API integrates with Cloud DLP (Data Loss Prevention) for advanced inspection and
+      transformation pipelines.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cloud.google.com/healthcare-api/docs/how-tos/deidentify
+    baseURL: https://healthcare.googleapis.com
+    tags:
+      - De-identification
+      - PHI
+      - HIPAA
+      - Privacy
+      - Data Anonymization
+      - Redaction
+    properties:
+      - type: Documentation
+        url: https://cloud.google.com/healthcare-api/docs/how-tos/deidentify
+      - type: ReferenceDocumentation
+        url: https://cloud.google.com/healthcare-api/docs/reference/rest/v1/projects.locations.datasets/deidentify
+  - aid: google-cloud-healthcare:healthcare-consent
+    name: Cloud Healthcare Consent Management API
+    description: >-
+      The Cloud Healthcare Consent Management API provides fine-grained, patient-centric consent
+      management for healthcare data access. It enables organizations to define consent policies,
+      record patient consent artifacts, and enforce access decisions at query time. The API supports
+      attribute-based access control via consent attributes, evaluation of consent decisions for
+      data access requests, and integration with FHIR stores to restrict FHIR resource access
+      based on active patient consents. Patient consent is billed at $0.05 per active consent
+      per month; admin policies at $50.00 per active policy per month.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cloud.google.com/healthcare-api/docs/how-tos/consent-management
+    baseURL: https://healthcare.googleapis.com
+    tags:
+      - Consent
+      - Patient Privacy
+      - Access Control
+      - HIPAA
+      - Data Governance
+    properties:
+      - type: Documentation
+        url: https://cloud.google.com/healthcare-api/docs/how-tos/consent-management
+      - type: ReferenceDocumentation
+        url: https://cloud.google.com/healthcare-api/docs/reference/rest/v1/projects.locations.datasets.consentStores
+common:
+  - type: GitHubOrganization
+    url: https://github.com/googleapis
+  - type: GettingStarted
+    url: https://cloud.google.com/healthcare-api/docs/quickstart
+  - type: Pricing
+    url: https://cloud.google.com/healthcare-api/pricing
+  - type: Authentication
+    url: https://cloud.google.com/healthcare-api/docs/how-tos/authentication
+  - type: Console
+    url: https://console.cloud.google.com/healthcare
+  - type: CLI
+    url: https://cloud.google.com/sdk/gcloud/reference/healthcare
+  - type: SDKs
+    url: https://cloud.google.com/healthcare-api/docs/reference/libraries
+  - type: Support
+    url: https://cloud.google.com/healthcare-api/docs/support
+  - type: StatusPage
+    url: https://status.cloud.google.com
+  - type: Compliance
+    url: https://cloud.google.com/healthcare-api/docs/concepts/hipaa
+  - type: Quotas
+    url: https://cloud.google.com/healthcare-api/quotas
+  - type: ReleaseNotes
+    url: https://cloud.google.com/healthcare-api/docs/release-notes
+integrations:
+  - name: Become a Partner
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

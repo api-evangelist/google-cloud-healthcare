@@ -1,0 +1,134 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Google Cloud Healthcare
+providerId: google-cloud-healthcare
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: true
+tags:
+  - Healthcare
+  - FHIR
+  - HL7v2
+  - DICOM
+  - Google Cloud
+  - Rate Limiting
+description: >-
+  Cloud Healthcare API enforces quotas measured per minute per region across FHIR, HL7v2, and
+  DICOM store types. Quotas track read, write, and search operations separately for FHIR, and
+  DICOMweb operations for DICOM. Request size limits are enforced per store type. Numeric quota
+  thresholds are not published in documentation and are only visible through the Google Cloud
+  Console Quotas page; projects with high-traffic workloads must proactively request quota
+  increases. FHIR transaction bundles exceeding 4,500 entries are immediately rejected. The
+  API can scale to thousands of requests per second when sufficient quota is allocated.
+sources:
+  - https://cloud.google.com/healthcare-api/quotas
+  - https://cloud.google.com/healthcare-api/docs/best-practices-quota-management
+  - https://cloud.google.com/healthcare-api/docs/best-practices-data-throughput
+responseCodes:
+  throttled: 429
+  quotaExceeded: 429
+  serverError: 500
+limits:
+  - name: FHIR read operations quota
+    scope: project/region
+    metric: operations_per_minute
+    limit: see Cloud Console quotas page
+    timeFrame: minute
+    notes: Tracks individual FHIR resource reads per project per region. Viewable in GCP Console.
+  - name: FHIR write operations quota
+    scope: project/region
+    metric: operations_per_minute
+    limit: see Cloud Console quotas page
+    timeFrame: minute
+    notes: Tracks FHIR create, update, and delete operations per project per region.
+  - name: FHIR search operations quota
+    scope: project/region
+    metric: operations_per_minute
+    limit: see Cloud Console quotas page
+    timeFrame: minute
+    notes: Tracks FHIR search requests per project per region.
+  - name: FHIR transaction bundle max entries
+    scope: request
+    metric: entries_per_bundle
+    limit: 4500
+    notes: Transaction bundles with more than 4,500 entries are immediately rejected to prevent timeouts.
+  - name: FHIR batch bundle timeout risk
+    scope: request
+    metric: entries_per_bundle
+    limit: see documentation
+    notes: Batch bundles have no hard entry limit, but large bundles risk server-side timeouts.
+  - name: DICOMweb operations quota
+    scope: project/region
+    metric: operations_per_minute
+    limit: see Cloud Console quotas page
+    timeFrame: minute
+    notes: Tracks STOW-RS, WADO-RS, and QIDO-RS DICOMweb operations per project per region.
+  - name: HL7v2 message size limit
+    scope: request
+    metric: bytes
+    limit: 10485760
+    notes: Maximum HL7v2 message size is 10 MB (base64-encoded data field).
+  - name: FHIR request size limit (general)
+    scope: request
+    metric: bytes
+    limit: 10485760
+    notes: Maximum request body size for most FHIR methods is 10 MB.
+  - name: FHIR Binary resource size limit
+    scope: request
+    metric: bytes
+    limit: 1073741824
+    notes: FHIR Binary resource operations allow up to 1 GB request size.
+  - name: FHIR executeBundle size limit
+    scope: request
+    metric: bytes
+    limit: 52428800
+    notes: FHIR executeBundle (batch/transaction) requests are limited to 50 MB.
+  - name: DICOM store transaction size limit
+    scope: request
+    metric: bytes
+    limit: -1
+    notes: DICOM STOW-RS store transactions are unlimited in size; import from Cloud Storage is limited only by GCS 5 TB per object maximum.
+  - name: DICOM non-store request size limit
+    scope: request
+    metric: bytes
+    limit: 10485760
+    notes: Non-STOW-RS DICOM methods (WADO-RS retrieve, QIDO-RS query) are limited to 10 MB per request.
+  - name: Import operation content size
+    scope: operation
+    metric: bytes
+    limit: 5497558138880
+    notes: Bulk import operations via Cloud Storage allow content up to the GCS per-object maximum of 5 TB.
+policies:
+  - name: Quota allocation
+    description: >-
+      Default quotas are assigned per project and are not automatically scaled. Projects expecting
+      high-volume healthcare data pipelines must proactively request quota increases via the
+      Google Cloud Console Quotas page before onboarding production traffic.
+  - name: Quota increase requests
+    description: >-
+      Quota raise requests are submitted through the GCP Console. Allow 1-3 business days for
+      review and approval. For large-scale workloads, contact Google Cloud healthcare sales to
+      coordinate quota planning.
+  - name: Exponential backoff
+    description: >-
+      Clients receiving 429 (quota exceeded) or 503 (service unavailable) responses should
+      implement exponential backoff with jitter before retrying. Do not retry immediately
+      on quota errors.
+  - name: FHIR bundle sizing
+    description: >-
+      Keep FHIR transaction bundles under 4,500 entries to avoid immediate rejection. For large
+      data loads, prefer batch bundles or bulk import from Cloud Storage over large transaction
+      bundles.
+  - name: DICOM ingestion throughput
+    description: >-
+      For high-volume DICOM ingestion, use bulk import from Cloud Storage rather than STOW-RS
+      per-instance upload. This avoids per-request overhead and leverages Cloud Storage's
+      high-throughput transfer capabilities.
+  - name: Regional quota isolation
+    description: >-
+      Quotas are enforced per project per region. Traffic spread across multiple regions
+      does not share quota pools; each region has its own independent quota allocation.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

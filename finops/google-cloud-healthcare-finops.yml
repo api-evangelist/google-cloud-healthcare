@@ -1,0 +1,226 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+provider: Google Cloud Healthcare
+providerId: google-cloud-healthcare
+publisherName: Google LLC
+serviceCategory: Healthcare Data Platform
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: true
+tags:
+  - Healthcare
+  - FHIR
+  - HL7v2
+  - DICOM
+  - Google Cloud
+  - FinOps
+  - FOCUS
+  - HIPAA
+description: >-
+  FOCUS-aligned FinOps for Cloud Healthcare API: usage-based billing across FHIR, HL7v2, DICOM,
+  and de-identification meters, plus Consent Management per-active-consent fees. Billing flows
+  through Google Cloud Billing with detailed export to BigQuery for cost attribution. Major cost
+  drivers are FHIR search operations (high data scan volume), DICOM egress during imaging
+  retrieval, bulk export jobs, and de-identification transformation GUs. Cost optimization
+  focuses on efficient FHIR search patterns, bulk import/export over per-record API calls,
+  and tiered de-identification volume management.
+sources:
+  - https://cloud.google.com/healthcare-api/pricing
+  - https://cloud.google.com/billing/docs/how-to/export-data-bigquery
+  - https://cloud.google.com/healthcare-api/docs/best-practices-data-throughput
+billingModel:
+  pricingCategory: Pay-As-You-Go
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+    - Usage
+    - Tax
+    - Adjustment
+    - Credit
+focusColumns:
+  ServiceName: Cloud Healthcare API
+  ServiceCategory: Healthcare / Medical Data
+  ProviderName: Google Cloud
+  PublisherName: Google LLC
+  InvoiceIssuerName: Google LLC
+  BillingCurrency: USD
+  ChargeCategory: Usage
+meters:
+  - name: fhir_storage
+    description: FHIR resource storage billed per GB-month
+    unit: GB-month
+    aggregation: sum
+    dimensions:
+      - project
+      - location
+      - dataset
+      - fhir_store
+  - name: fhir_read_ops
+    description: Data volume processed by FHIR read operations
+    unit: GB
+    aggregation: sum
+    dimensions:
+      - project
+      - location
+      - dataset
+      - fhir_store
+  - name: fhir_write_ops
+    description: Data volume processed by FHIR write operations (create/update/delete)
+    unit: GB
+    aggregation: sum
+    dimensions:
+      - project
+      - location
+      - dataset
+      - fhir_store
+  - name: fhir_search_ops
+    description: Data volume scanned by FHIR search operations
+    unit: GB
+    aggregation: sum
+    dimensions:
+      - project
+      - location
+      - dataset
+      - fhir_store
+  - name: fhir_bulk_export
+    description: Data volume exported from FHIR stores to Cloud Storage or BigQuery
+    unit: GB
+    aggregation: sum
+    dimensions:
+      - project
+      - location
+      - dataset
+  - name: hl7v2_storage
+    description: HL7v2 message storage billed per GB-month
+    unit: GB-month
+    aggregation: sum
+    dimensions:
+      - project
+      - location
+      - dataset
+      - hl7v2_store
+  - name: hl7v2_ingest_ops
+    description: Raw byte volume of HL7v2 messages ingested
+    unit: GB
+    aggregation: sum
+    dimensions:
+      - project
+      - location
+      - dataset
+      - hl7v2_store
+  - name: dicom_storage
+    description: DICOM imaging file storage billed per GB-month
+    unit: GB-month
+    aggregation: sum
+    dimensions:
+      - project
+      - location
+      - dataset
+      - dicom_store
+  - name: dicom_ops
+    description: DICOM file data volume processed by DICOMweb operations (STOW-RS/WADO-RS/QIDO-RS)
+    unit: GB
+    aggregation: sum
+    dimensions:
+      - project
+      - location
+      - dataset
+      - dicom_store
+  - name: deidentify_inspect_gu
+    description: Gigabyte Units of data inspected for PHI/PII during de-identification
+    unit: GU
+    aggregation: sum
+    dimensions:
+      - project
+      - location
+      - dataset
+  - name: deidentify_transform_gu
+    description: Gigabyte Units of data transformed/redacted during de-identification
+    unit: GU
+    aggregation: sum
+    dimensions:
+      - project
+      - location
+      - dataset
+  - name: consent_patient_monthly
+    description: Active Patient consent records billed per consent per month
+    unit: consent-month
+    aggregation: count
+    dimensions:
+      - project
+      - location
+      - dataset
+      - consent_store
+  - name: consent_admin_policy_monthly
+    description: Active Admin policy records billed per policy per month
+    unit: policy-month
+    aggregation: count
+    dimensions:
+      - project
+      - location
+      - dataset
+      - consent_store
+apis:
+  - name: Cloud Healthcare FHIR API
+    baseURL: https://healthcare.googleapis.com
+    serviceName: Cloud Healthcare API
+    serviceCategory: Healthcare Data / FHIR
+  - name: Cloud Healthcare HL7v2 API
+    baseURL: https://healthcare.googleapis.com
+    serviceName: Cloud Healthcare API
+    serviceCategory: Healthcare Data / HL7v2
+  - name: Cloud Healthcare DICOM API
+    baseURL: https://healthcare.googleapis.com
+    serviceName: Cloud Healthcare API
+    serviceCategory: Healthcare Data / Medical Imaging
+  - name: Cloud Healthcare De-identification API
+    baseURL: https://healthcare.googleapis.com
+    serviceName: Cloud Healthcare API
+    serviceCategory: Healthcare Data / Privacy
+  - name: Cloud Healthcare Consent Management API
+    baseURL: https://healthcare.googleapis.com
+    serviceName: Cloud Healthcare API
+    serviceCategory: Healthcare Data / Consent
+principles:
+  - name: Visibility
+    description: >-
+      Enable Cloud Billing detailed export to BigQuery to gain per-project, per-dataset, and
+      per-store cost attribution. Use Cloud Monitoring to track FHIR operation counts and
+      data volumes. Label datasets and FHIR/HL7v2/DICOM stores by application, team, and
+      environment to enable chargeback reporting in the billing export.
+  - name: Allocation
+    description: >-
+      Organize healthcare data by creating separate datasets per business unit or application.
+      Apply resource labels to datasets and stores for cost allocation. Use Cloud Billing
+      budget alerts per project to track spend against healthcare data pipeline budgets.
+      Separate DICOM imaging storage (typically largest cost driver) from FHIR transactional
+      data in distinct projects for cleaner chargeback.
+  - name: Optimization
+    description: >-
+      Optimize FHIR search queries with narrow date ranges and specific resource type filters
+      to reduce data scanned per search. Prefer bulk import from Cloud Storage over
+      per-resource FHIR create calls for initial data loads — bulk operations are more
+      cost-efficient at scale. For DICOM, serve retrieved images from Cloud CDN or Cloud
+      Storage signed URLs after initial retrieval rather than re-fetching from the DICOM store.
+      Batch de-identification jobs during off-peak hours and monitor GU consumption to stay
+      within the 1 GU/month free tier for small workloads. For Consent Management, audit
+      and purge stale consent records to reduce per-active-consent monthly charges.
+  - name: Accountability
+    description: >-
+      Set Cloud Billing budget alerts at 50%, 80%, and 100% of monthly budget per project.
+      Implement Cloud Monitoring alerts on FHIR operation quotas to catch unexpected traffic
+      spikes (e.g., runaway search queries). Review monthly Cloud Billing SKU-level breakdown
+      to identify the top cost drivers across FHIR, HL7v2, DICOM, and de-identification.
+      Track de-identification GU consumption monthly to forecast costs for compliance
+      pipelines. Use Cloud Audit Logs to attribute data access and operation costs to
+      specific service accounts and users.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

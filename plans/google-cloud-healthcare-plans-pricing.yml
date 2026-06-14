@@ -1,0 +1,325 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Google Cloud Healthcare
+providerId: google-cloud-healthcare
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: true
+tags:
+  - Healthcare
+  - FHIR
+  - HL7v2
+  - DICOM
+  - Google Cloud
+  - Medical Imaging
+description: >-
+  Google Cloud Healthcare API is priced on a usage-based model across its four main data store types:
+  FHIR, HL7v2, DICOM, and de-identification. Costs are incurred for data storage (per GB-month),
+  API operations (reads, writes, searches), bulk import/export jobs, Pub/Sub notifications, and
+  Consent Management policies. De-identification is measured in GUs (Gigabyte Units) with tiered
+  pricing. New Google Cloud customers receive $300 in free credits. No meaningful free tier exists
+  for production healthcare workloads; always verify current rates on the official pricing page.
+sources:
+  - https://cloud.google.com/healthcare-api/pricing
+plans:
+  - id: google-cloud-healthcare-free-credits
+    name: Free Credits (New Customers)
+    type: freemium
+    description: >-
+      New Google Cloud customers receive $300 in free credits that can be applied to any Google
+      Cloud product including the Cloud Healthcare API. Credits expire 90 days after account
+      creation. This is not a sustained free tier — once credits are exhausted, standard usage
+      billing applies.
+    entries:
+      - label: New customer free credits
+        description: One-time $300 credit for new Google Cloud accounts applicable to Healthcare API usage
+        name: new_customer_credits
+        type: quota
+        metric: USD
+        limit: 300
+        timeFrame: one-time
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: FHIR Store operations
+      - name: HL7v2 Store operations
+      - name: DICOM Store operations
+      - name: De-identification
+      - name: Consent Management
+  - id: google-cloud-healthcare-fhir
+    name: FHIR Store - Usage-Based
+    type: usage-based
+    description: >-
+      FHIR store pricing covers data storage (per GB-month), read/write/search operations billed
+      per GB of FHIR resource data processed, bulk import/export operations, and Pub/Sub notification
+      costs. FHIR data volume is measured based on the entire FHIR resource size in protocol buffer
+      format. Rates vary by region; consult the official pricing page for current SKU rates.
+    entries:
+      - label: FHIR structured storage
+        description: Storage for FHIR resources, billed per GB-month
+        name: fhir_storage
+        type: metered
+        metric: GB-month
+        limit: -1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: see pricing page
+        userMultiplied: false
+      - label: FHIR read operations
+        description: Per-GB of FHIR resource data read; billed on data volume processed
+        name: fhir_read_ops
+        type: metered
+        metric: GB
+        limit: -1
+        timeFrame: usage
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: see pricing page
+        userMultiplied: false
+      - label: FHIR write operations
+        description: Per-GB of FHIR resource data written (create/update/delete)
+        name: fhir_write_ops
+        type: metered
+        metric: GB
+        limit: -1
+        timeFrame: usage
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: see pricing page
+        userMultiplied: false
+      - label: FHIR search operations
+        description: Per-GB of FHIR resource data scanned during search queries
+        name: fhir_search_ops
+        type: metered
+        metric: GB
+        limit: -1
+        timeFrame: usage
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: see pricing page
+        userMultiplied: false
+      - label: FHIR bulk export
+        description: Bulk export of FHIR resources to Cloud Storage or BigQuery
+        name: fhir_bulk_export
+        type: metered
+        metric: GB
+        limit: -1
+        timeFrame: usage
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: see pricing page
+        userMultiplied: false
+    elements:
+      - name: FHIR R4
+      - name: FHIR STU3
+      - name: FHIR DSTU2
+      - name: SMART on FHIR authorization
+      - name: Pub/Sub notifications
+      - name: BigQuery export
+      - name: Cloud Storage import/export
+  - id: google-cloud-healthcare-hl7v2
+    name: HL7v2 Store - Usage-Based
+    type: usage-based
+    description: >-
+      HL7v2 store pricing covers message storage (per GB-month), message ingest/send operations,
+      and Pub/Sub notification delivery. HL7v2 data volume is based on the raw byte size of HL7v2
+      messages. Individual messages are limited to 10 MB. Rates vary by region.
+    entries:
+      - label: HL7v2 message storage
+        description: Storage for HL7v2 messages, billed per GB-month
+        name: hl7v2_storage
+        type: metered
+        metric: GB-month
+        limit: -1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: see pricing page
+        userMultiplied: false
+      - label: HL7v2 ingest operations
+        description: Per-GB of raw HL7v2 message bytes ingested
+        name: hl7v2_ingest_ops
+        type: metered
+        metric: GB
+        limit: -1
+        timeFrame: usage
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: see pricing page
+        userMultiplied: false
+    elements:
+      - name: HL7v2 message parsing
+      - name: Pub/Sub notifications
+      - name: BigQuery export
+      - name: Cloud Storage export
+  - id: google-cloud-healthcare-dicom
+    name: DICOM Store - Usage-Based
+    type: usage-based
+    description: >-
+      DICOM store pricing covers imaging data storage (per GB-month), DICOMweb operations
+      (STOW-RS store, WADO-RS retrieve, QIDO-RS query), and bulk import/export to Cloud Storage.
+      DICOM data volume is based on the size of the stored DICOM files. DICOM store transactions
+      are unlimited in size; other request methods are limited to 10 MB each.
+    entries:
+      - label: DICOM imaging storage
+        description: Storage for DICOM instances (studies, series, images), billed per GB-month
+        name: dicom_storage
+        type: metered
+        metric: GB-month
+        limit: -1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: see pricing page
+        userMultiplied: false
+      - label: DICOMweb operations
+        description: Per-GB of DICOM file data for STOW-RS (store), WADO-RS (retrieve), QIDO-RS (query)
+        name: dicom_ops
+        type: metered
+        metric: GB
+        limit: -1
+        timeFrame: usage
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: see pricing page
+        userMultiplied: false
+    elements:
+      - name: STOW-RS (store instances)
+      - name: WADO-RS (retrieve instances)
+      - name: QIDO-RS (query metadata)
+      - name: Cloud Storage import/export
+  - id: google-cloud-healthcare-deidentify
+    name: De-identification - Usage-Based
+    type: usage-based
+    description: >-
+      De-identification is billed in Gigabyte Units (GUs) of data inspected or transformed. Tiered
+      pricing applies with inspection charged separately from transformation. The first 1 GU per
+      month is free for both inspection and transformation. Transformation costs exceed inspection
+      costs by approximately 10x. De-identification applies to FHIR resources, DICOM pixel data,
+      and unstructured text via Cloud DLP integration.
+    entries:
+      - label: De-identification inspection (0-1 GU/month)
+        description: First gigabyte unit of inspection per month is free
+        name: deidentify_inspect_free
+        type: quota
+        metric: GU
+        limit: 1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: De-identification inspection (>1 GU/month, tiered)
+        description: Tiered rates for inspection beyond the first free GU; rates decrease at higher volumes
+        name: deidentify_inspect_paid
+        type: metered
+        metric: GU
+        limit: -1
+        timeFrame: usage
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: see pricing page (approx $0.10-$0.30/GU tiered)
+        userMultiplied: false
+      - label: De-identification transformation (0-1 GU/month)
+        description: First gigabyte unit of transformation per month is free
+        name: deidentify_transform_free
+        type: quota
+        metric: GU
+        limit: 1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: De-identification transformation (>1 GU/month, tiered)
+        description: Tiered rates for transformation beyond the first free GU; approximately $1.00-$3.00/GU
+        name: deidentify_transform_paid
+        type: metered
+        metric: GU
+        limit: -1
+        timeFrame: usage
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: see pricing page (approx $1.00-$3.00/GU tiered)
+        userMultiplied: false
+    elements:
+      - name: FHIR resource de-identification
+      - name: DICOM pixel anonymization
+      - name: Unstructured text redaction
+      - name: Date shifting
+      - name: Cryptographic hashing
+      - name: HIPAA Safe Harbor compliance
+  - id: google-cloud-healthcare-consent
+    name: Consent Management - Usage-Based
+    type: usage-based
+    description: >-
+      Consent Management is billed per active consent artifact or admin policy held per month.
+      Patient-level consents are charged at $0.05 per active Patient consent per month.
+      Organization-level admin policies are charged at $50.00 per active Admin policy per month.
+    entries:
+      - label: Active patient consent
+        description: Per active Patient consent record per month
+        name: consent_patient
+        type: metered
+        metric: consent
+        limit: -1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: '0.05'
+        userMultiplied: false
+      - label: Active admin policy
+        description: Per active Admin policy record per month
+        name: consent_admin_policy
+        type: metered
+        metric: policy
+        limit: -1
+        timeFrame: month
+        geo: global
+        domains:
+          - https://healthcare.googleapis.com
+        unit: 1
+        price: '50.00'
+        userMultiplied: false
+    elements:
+      - name: Patient consent artifacts
+      - name: Admin access policies
+      - name: Consent evaluation at query time
+      - name: FHIR store consent enforcement
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
