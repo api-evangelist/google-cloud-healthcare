@@ -170,7 +170,7 @@ common:
     url: https://status.cloud.google.com
   - type: Compliance
     url: https://cloud.google.com/healthcare-api/docs/concepts/hipaa
-  - type: Quotas
+  - type: RateLimits
     url: https://cloud.google.com/healthcare-api/quotas
   - type: ReleaseNotes
     url: https://cloud.google.com/healthcare-api/docs/release-notes
