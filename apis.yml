@@ -150,6 +150,12 @@ apis:
       - type: ReferenceDocumentation
         url: https://cloud.google.com/healthcare-api/docs/reference/rest/v1/projects.locations.datasets.consentStores
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-healthcare-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-healthcare-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-healthcare-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-healthcare-scopes.yml
   - type: GitHubOrganization
