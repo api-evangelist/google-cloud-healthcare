@@ -150,6 +150,8 @@ apis:
       - type: ReferenceDocumentation
         url: https://cloud.google.com/healthcare-api/docs/reference/rest/v1/projects.locations.datasets.consentStores
 common:
+  - type: OAuthScopes
+    url: scopes/google-cloud-healthcare-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/googleapis
   - type: GettingStarted

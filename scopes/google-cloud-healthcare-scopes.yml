@@ -1,0 +1,48 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openapi-v1.yaml, openapi/openapi-v1beta1.yaml
+schemes:
+- name: Oauth2
+  source: openapi/openapi-v1.yaml
+  flows:
+  - flow: implicit
+    authorizationUrl: https://accounts.google.com/o/oauth2/auth
+  description: Oauth 2.0 implicit authentication
+- name: Oauth2c
+  source: openapi/openapi-v1.yaml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.google.com/o/oauth2/auth
+    tokenUrl: https://accounts.google.com/o/oauth2/token
+  description: Oauth 2.0 authorizationCode authentication
+- name: Oauth2
+  source: openapi/openapi-v1beta1.yaml
+  flows:
+  - flow: implicit
+    authorizationUrl: https://accounts.google.com/o/oauth2/auth
+  description: Oauth 2.0 implicit authentication
+- name: Oauth2c
+  source: openapi/openapi-v1beta1.yaml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.google.com/o/oauth2/auth
+    tokenUrl: https://accounts.google.com/o/oauth2/token
+  description: Oauth 2.0 authorizationCode authentication
+scopes:
+- scope: https://www.googleapis.com/auth/cloud-healthcare
+  description: Read, write and manage healthcare data
+  flows:
+  - authorizationCode
+  - implicit
+  sources:
+  - openapi/openapi-v1.yaml
+  - openapi/openapi-v1beta1.yaml
+- scope: https://www.googleapis.com/auth/cloud-platform
+  description: See, edit, configure, and delete your Google Cloud data and see the email address
+    for your Google Account.
+  flows:
+  - authorizationCode
+  - implicit
+  sources:
+  - openapi/openapi-v1.yaml
+  - openapi/openapi-v1beta1.yaml
