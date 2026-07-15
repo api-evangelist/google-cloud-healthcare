@@ -1,0 +1,2500 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/openapi-v1.yaml, openapi/openapi-v1beta1.yaml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 149
+  by_action_class:
+    acting: 91
+    connected: 58
+  by_consequence:
+    write: 89
+    read: 58
+    safety-critical: 2
+  human_in_the_loop_required: 2
+operations:
+- path: /v1/{consentStore}:checkDataAccess
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.checkDataAccess
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{consentStore}:evaluateUserConsents
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.evaluateUserConsents
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{consentStore}:queryAccessibleData
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.queryAccessibleData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{name}
+  method: delete
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.messages.delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{name}
+  method: get
+  operationId: healthcare.projects.locations.datasets.operations.get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{name}
+  method: patch
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.messages.patch
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{name}
+  method: put
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{name}/$everything
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.Patient-everything
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{name}/$purge
+  method: delete
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.Resource-purge
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{name}/_history
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.history
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{name}/fhir/metadata
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.capabilities
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{name}/locations
+  method: get
+  operationId: healthcare.projects.locations.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{name}/operations
+  method: get
+  operationId: healthcare.projects.locations.datasets.operations.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{name}:activate
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.consents.activate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{name}:archive
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.userDataMappings.archive
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{name}:cancel
+  method: post
+  operationId: healthcare.projects.locations.datasets.operations.cancel
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{name}:deleteRevision
+  method: delete
+  operationId: healthcare.projects.locations.datasets.consentStores.consents.deleteRevision
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{name}:export
+  method: post
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.export
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{name}:getDICOMStoreMetrics
+  method: get
+  operationId: healthcare.projects.locations.datasets.dicomStores.getDICOMStoreMetrics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{name}:getFHIRStoreMetrics
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.getFHIRStoreMetrics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{name}:getHL7v2StoreMetrics
+  method: get
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.getHL7v2StoreMetrics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{name}:import
+  method: post
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.import
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{name}:listRevisions
+  method: get
+  operationId: healthcare.projects.locations.datasets.consentStores.consents.listRevisions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{name}:reject
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.consents.reject
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{name}:revoke
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.consents.revoke
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /v1/{name}:rollback
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.rollback
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{nlpService}:analyzeEntities
+  method: post
+  operationId: healthcare.projects.locations.services.nlp.analyzeEntities
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/attributeDefinitions
+  method: get
+  operationId: healthcare.projects.locations.datasets.consentStores.attributeDefinitions.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{parent}/attributeDefinitions
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.attributeDefinitions.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/consentArtifacts
+  method: get
+  operationId: healthcare.projects.locations.datasets.consentStores.consentArtifacts.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{parent}/consentArtifacts
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.consentArtifacts.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/consentStores
+  method: get
+  operationId: healthcare.projects.locations.datasets.consentStores.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{parent}/consentStores
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/consents
+  method: get
+  operationId: healthcare.projects.locations.datasets.consentStores.consents.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{parent}/consents
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.consents.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/datasets
+  method: get
+  operationId: healthcare.projects.locations.datasets.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{parent}/datasets
+  method: post
+  operationId: healthcare.projects.locations.datasets.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/dicomStores
+  method: get
+  operationId: healthcare.projects.locations.datasets.dicomStores.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{parent}/dicomStores
+  method: post
+  operationId: healthcare.projects.locations.datasets.dicomStores.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/dicomWeb/{dicomWebPath}
+  method: delete
+  operationId: healthcare.projects.locations.datasets.dicomStores.studies.series.instances.delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/dicomWeb/{dicomWebPath}
+  method: get
+  operationId: healthcare.projects.locations.datasets.dicomStores.studies.series.instances.frames.retrieveRendered
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{parent}/dicomWeb/{dicomWebPath}
+  method: post
+  operationId: healthcare.projects.locations.datasets.dicomStores.studies.storeInstances
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/fhir
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.executeBundle
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/fhir/_search
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.search
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/fhir/{resourceType}/_search
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.search-type
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/fhir/{type}
+  method: delete
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.conditionalDelete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/fhir/{type}
+  method: patch
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.conditionalPatch
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/fhir/{type}
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/fhir/{type}
+  method: put
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.conditionalUpdate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/fhir/{type}/$validate
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.Resource-validate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/fhirStores
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{parent}/fhirStores
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/hl7V2Stores
+  method: get
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{parent}/hl7V2Stores
+  method: post
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/messages
+  method: get
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.messages.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{parent}/messages
+  method: post
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.messages.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/messages:ingest
+  method: post
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.messages.ingest
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{parent}/userDataMappings
+  method: get
+  operationId: healthcare.projects.locations.datasets.consentStores.userDataMappings.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{parent}/userDataMappings
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.userDataMappings.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{resource}:getIamPolicy
+  method: get
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.getIamPolicy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{resource}:setIamPolicy
+  method: post
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.setIamPolicy
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{resource}:testIamPermissions
+  method: post
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.testIamPermissions
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{series}:getSeriesMetrics
+  method: get
+  operationId: healthcare.projects.locations.datasets.dicomStores.dicomWeb.studies.series.getSeriesMetrics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/{sourceDataset}:deidentify
+  method: post
+  operationId: healthcare.projects.locations.datasets.deidentify
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{sourceStore}:deidentify
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.deidentify
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/{study}:getStudyMetrics
+  method: get
+  operationId: healthcare.projects.locations.datasets.dicomStores.dicomWeb.studies.getStudyMetrics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{consentStore}:checkDataAccess
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.checkDataAccess
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{consentStore}:evaluateUserConsents
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.evaluateUserConsents
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{consentStore}:queryAccessibleData
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.queryAccessibleData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}
+  method: delete
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.messages.delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}
+  method: get
+  operationId: healthcare.projects.locations.datasets.operations.get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{name}
+  method: patch
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.messages.patch
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}
+  method: put
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}/$consent-enforcement-status
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.Patient-consent-enforcement-status
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{name}/$everything
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.Patient-everything
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{name}/$purge
+  method: delete
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.Resource-purge
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}/$translate
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.ConceptMap-translate
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{name}/_history
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.history
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{name}/fhir/metadata
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.capabilities
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{name}/locations
+  method: get
+  operationId: healthcare.projects.locations.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{name}/operations
+  method: get
+  operationId: healthcare.projects.locations.datasets.operations.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{name}:activate
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.consents.activate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}:applyAdminConsents
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.applyAdminConsents
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}:applyConsents
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.applyConsents
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}:archive
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.userDataMappings.archive
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}:cancel
+  method: post
+  operationId: healthcare.projects.locations.datasets.operations.cancel
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}:configureSearch
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.configureSearch
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}:deleteRevision
+  method: delete
+  operationId: healthcare.projects.locations.datasets.consentStores.consents.deleteRevision
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}:evaluate
+  method: post
+  operationId: healthcare.projects.locations.datasets.annotationStores.evaluate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}:explainDataAccess
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.explainDataAccess
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{name}:export
+  method: post
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.export
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}:getDICOMStoreMetrics
+  method: get
+  operationId: healthcare.projects.locations.datasets.dicomStores.getDICOMStoreMetrics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{name}:getFHIRStoreMetrics
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.getFHIRStoreMetrics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{name}:getHL7v2StoreMetrics
+  method: get
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.getHL7v2StoreMetrics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{name}:import
+  method: post
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.import
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}:listRevisions
+  method: get
+  operationId: healthcare.projects.locations.datasets.consentStores.consents.listRevisions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{name}:reject
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.consents.reject
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{name}:revoke
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.consents.revoke
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /v1beta1/{name}:rollback
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.rollback
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{nlpService}:analyzeEntities
+  method: post
+  operationId: healthcare.projects.locations.services.nlp.analyzeEntities
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/annotationStores
+  method: get
+  operationId: healthcare.projects.locations.datasets.annotationStores.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/annotationStores
+  method: post
+  operationId: healthcare.projects.locations.datasets.annotationStores.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/annotations
+  method: get
+  operationId: healthcare.projects.locations.datasets.annotationStores.annotations.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/annotations
+  method: post
+  operationId: healthcare.projects.locations.datasets.annotationStores.annotations.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/attributeDefinitions
+  method: get
+  operationId: healthcare.projects.locations.datasets.consentStores.attributeDefinitions.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/attributeDefinitions
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.attributeDefinitions.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/consentArtifacts
+  method: get
+  operationId: healthcare.projects.locations.datasets.consentStores.consentArtifacts.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/consentArtifacts
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.consentArtifacts.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/consentStores
+  method: get
+  operationId: healthcare.projects.locations.datasets.consentStores.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/consentStores
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/consents
+  method: get
+  operationId: healthcare.projects.locations.datasets.consentStores.consents.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/consents
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.consents.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/datasets
+  method: get
+  operationId: healthcare.projects.locations.datasets.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/datasets
+  method: post
+  operationId: healthcare.projects.locations.datasets.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/dicomStores
+  method: get
+  operationId: healthcare.projects.locations.datasets.dicomStores.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/dicomStores
+  method: post
+  operationId: healthcare.projects.locations.datasets.dicomStores.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/dicomWeb/{dicomWebPath}
+  method: delete
+  operationId: healthcare.projects.locations.datasets.dicomStores.studies.series.instances.delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/dicomWeb/{dicomWebPath}
+  method: get
+  operationId: healthcare.projects.locations.datasets.dicomStores.studies.series.instances.frames.retrieveRendered
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/dicomWeb/{dicomWebPath}
+  method: post
+  operationId: healthcare.projects.locations.datasets.dicomStores.studies.storeInstances
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/fhir
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.executeBundle
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/fhir/$references
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.Resource-incoming-references
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/fhir/ConceptMap/$translate
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.ConceptMap-search-translate
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/fhir/Observation/$lastn
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.Observation-lastn
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/fhir/_search
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.search
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/fhir/{resourceType}/_search
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.search-type
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/fhir/{type}
+  method: delete
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.conditionalDelete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/fhir/{type}
+  method: patch
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.conditionalPatch
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/fhir/{type}
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/fhir/{type}
+  method: put
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.conditionalUpdate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/fhir/{type}/$validate
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.fhir.Resource-validate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/fhirStores
+  method: get
+  operationId: healthcare.projects.locations.datasets.fhirStores.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/fhirStores
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/hl7V2Stores
+  method: get
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/hl7V2Stores
+  method: post
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/messages
+  method: get
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.messages.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/messages
+  method: post
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.messages.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/messages:batchGet
+  method: get
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.messages.batchGet
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/messages:ingest
+  method: post
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.messages.ingest
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{parent}/userDataMappings
+  method: get
+  operationId: healthcare.projects.locations.datasets.consentStores.userDataMappings.list
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{parent}/userDataMappings
+  method: post
+  operationId: healthcare.projects.locations.datasets.consentStores.userDataMappings.create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{resource}:getIamPolicy
+  method: get
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.getIamPolicy
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{resource}:getStorageInfo
+  method: get
+  operationId: healthcare.projects.locations.datasets.dicomStores.dicomWeb.studies.series.instances.getStorageInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{resource}:setBlobStorageSettings
+  method: post
+  operationId: healthcare.projects.locations.datasets.dicomStores.dicomWeb.studies.setBlobStorageSettings
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{resource}:setIamPolicy
+  method: post
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.setIamPolicy
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{resource}:testIamPermissions
+  method: post
+  operationId: healthcare.projects.locations.datasets.hl7V2Stores.testIamPermissions
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{series}:getSeriesMetrics
+  method: get
+  operationId: healthcare.projects.locations.datasets.dicomStores.dicomWeb.studies.series.getSeriesMetrics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1beta1/{sourceDataset}:deidentify
+  method: post
+  operationId: healthcare.projects.locations.datasets.deidentify
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{sourceStore}:deidentify
+  method: post
+  operationId: healthcare.projects.locations.datasets.fhirStores.deidentify
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1beta1/{study}:getStudyMetrics
+  method: get
+  operationId: healthcare.projects.locations.datasets.dicomStores.dicomWeb.studies.getStudyMetrics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - https://www.googleapis.com/auth/cloud-healthcare
+    - https://www.googleapis.com/auth/cloud-platform
+    token:
+      max-ttl: 3600
+    audit: none
