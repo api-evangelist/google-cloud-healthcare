@@ -1,0 +1,14 @@
+{
+  "provider": "google-cloud-healthcare",
+  "sources": [
+    "google-cloud-healthcare-projects-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-healthcare-projects-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -10,7 +10,7 @@ info:
     url: http://creativecommons.org/licenses/by/3.0/
   termsOfService: https://developers.google.com/terms/
   title: Cloud Healthcare projects API
-  version: v1
+  version: "v1"
   x-apiClientRegistration:
     url: https://console.developers.google.com
   x-apisguru-categories:
@@ -21,7 +21,6 @@ info:
   x-origin:
   - format: google
     url: https://healthcare.googleapis.com/$discovery/rest?version=v1
-    version: v1
   x-preferred: false
   x-providerName: googleapis.com
   x-serviceName: healthcare
