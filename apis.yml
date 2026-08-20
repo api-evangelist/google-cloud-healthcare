@@ -32,6 +32,15 @@ tags:
   - HL7v2
   - DICOM
   - Medical Imaging
+  - De-Identification
+  - Interoperability
+  - Cloud
+tags_raw:
+  - Healthcare
+  - FHIR
+  - HL7v2
+  - DICOM
+  - Medical Imaging
   - De-identification
   - Interoperability
   - Cloud
@@ -126,6 +135,13 @@ apis:
   humanURL: https://cloud.google.com/healthcare-api/docs/how-tos/deidentify
   baseURL: https://healthcare.googleapis.com
   tags:
+  - De-Identification
+  - PHI
+  - HIPAA
+  - Privacy
+  - Data Anonymization
+  - Redaction
+  tags_raw:
   - De-identification
   - PHI
   - HIPAA
@@ -168,6 +184,8 @@ apis:
   humanURL: https://cloud.google.com/healthcare-api/docs/how-tos/fhir
   baseURL: https://healthcare.googleapis.com
   tags:
+  - Project
+  tags_raw:
   - projects
   properties:
   - type: OpenAPI
