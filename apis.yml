@@ -8,6 +8,18 @@ description: >-
   The API enables healthcare organizations to build interoperable data pipelines, connect clinical
   systems, and power machine learning applications on Google Cloud infrastructure.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
