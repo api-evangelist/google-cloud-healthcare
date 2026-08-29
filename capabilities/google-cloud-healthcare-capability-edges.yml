@@ -18,10 +18,9 @@ edges:
   capability_id: BC-2900.60
   capability_id_l1: BC-2900
   capability_name: Healthcare Interoperability Operations
-  confidence: 0.82
+  confidence: 0.8
   evidence: healthcare.projects.locations.datasets.fhirStores.fhir.capabilities; healthcare.projects.locations.datasets.hl7V2Stores.messages.patch;
-    DeidentifyFhirStoreRequest
-  reason: Despite the generic 'projects' tag, the operations are FHIR store CRUD, HL7v2 message stores,
-    DICOM and de-identification plus consent evaluation — i.e. operating FHIR endpoints and health data
-    exchange infrastructure, which is Healthcare Interoperability Operations. Some spill into general
-    data management keeps it below 0.9.
+    ApplyAdminConsentsRequest, DeidentifyFhirStoreRequest
+  reason: Operations run FHIR stores, HL7v2 message stores, DICOM and consent stores with de-identification
+    — i.e. operating standards-based health data exchange endpoints for a provider estate, which is healthcare
+    interoperability operations.
