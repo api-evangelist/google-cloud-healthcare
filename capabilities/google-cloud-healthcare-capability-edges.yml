@@ -1,0 +1,27 @@
+slug: google-cloud-healthcare
+provider: Google Cloud Healthcare
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Healthcare Providers
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: projects
+  spec_file: google-cloud-healthcare-projects-api-openapi.yml
+  capability_id: BC-2900.60
+  capability_id_l1: BC-2900
+  capability_name: Healthcare Interoperability Operations
+  confidence: 0.82
+  evidence: healthcare.projects.locations.datasets.fhirStores.fhir.capabilities; healthcare.projects.locations.datasets.hl7V2Stores.messages.patch;
+    DeidentifyFhirStoreRequest
+  reason: Despite the generic 'projects' tag, the operations are FHIR store CRUD, HL7v2 message stores,
+    DICOM and de-identification plus consent evaluation — i.e. operating FHIR endpoints and health data
+    exchange infrastructure, which is Healthcare Interoperability Operations. Some spill into general
+    data management keeps it below 0.9.

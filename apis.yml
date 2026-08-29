@@ -203,6 +203,9 @@ apis:
   - type: OpenAPI
     url: openapi/google-cloud-healthcare-projects-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/google-cloud-healthcare-capability-edges.yml
+    name: Google Cloud Healthcare Business Capability Map
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/google-cloud-healthcare/overview
   - type: AgenticAccess
