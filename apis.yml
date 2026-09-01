@@ -44,7 +44,7 @@ tags:
   - HL7v2
   - DICOM
   - Medical Imaging
-  - De-identification
+  - De-Identification
   - Interoperability
   - Cloud
 tags_raw:
@@ -147,7 +147,7 @@ apis:
   humanURL: https://cloud.google.com/healthcare-api/docs/how-tos/deidentify
   baseURL: https://healthcare.googleapis.com
   tags:
-  - De-identification
+  - De-Identification
   - PHI
   - HIPAA
   - Privacy
