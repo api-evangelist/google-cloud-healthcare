@@ -203,6 +203,8 @@ apis:
   - type: OpenAPI
     url: openapi/google-cloud-healthcare-projects-api-openapi.yml
 common:
+  - type: Website
+    url: https://www.google.com/
   - type: CapabilityMap
     url: capabilities/google-cloud-healthcare-capability-edges.yml
     name: Google Cloud Healthcare Business Capability Map
@@ -247,3 +249,5 @@ integrations:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-parent: google-cloud-platform
+x-relationship: product
