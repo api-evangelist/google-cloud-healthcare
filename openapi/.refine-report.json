@@ -1,7 +1,8 @@
 {
   "provider": "google-cloud-healthcare",
   "sources": [
-    "google-cloud-healthcare-projects-api-openapi.yml"
+    "_original/openapi-v1.yaml",
+    "_original/openapi-v1beta1.yaml"
   ],
   "outputs": [
     "google-cloud-healthcare-projects-api-openapi.yml"
@@ -10,8 +11,13 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-cloud-healthcare-projects-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi-v1.yaml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "openapi-v1beta1.yaml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "tag 'projects' spans 2 source specs (openapi-v1.yaml, openapi-v1beta1.yaml): per-path servers applied",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "google-cloud-healthcare-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
