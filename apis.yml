@@ -72,6 +72,15 @@ apis:
   tags:
   - FHIR
   - Clinical Data
+  - Interoperability
+  - R4
+  - STU3
+  - Patients
+  - Observations
+  - Encounters
+  tags_raw:
+  - FHIR
+  - Clinical Data
   - Healthcare Interoperability
   - R4
   - STU3
@@ -191,7 +200,7 @@ apis:
     url: >-
       https://cloud.google.com/healthcare-api/docs/reference/rest/v1/projects.locations.datasets.consentStores
 - aid: google-cloud-healthcare:google-cloud-healthcare-projects-api
-  name: Google Cloud Healthcare projects API
+  name: Google Cloud Healthcare Projects API
   description: The projects API from Google Cloud Healthcare — 111 operation(s) for projects.
   humanURL: https://cloud.google.com/healthcare-api/docs/how-tos/fhir
   baseURL: https://healthcare.googleapis.com
