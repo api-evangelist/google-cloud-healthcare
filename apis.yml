@@ -212,6 +212,10 @@ apis:
   - type: OpenAPI
     url: openapi/google-cloud-healthcare-projects-api-openapi.yml
 common:
+  - type: Plans
+    url: plans/google-cloud-healthcare-plans-pricing.yml
+  - type: FinOps
+    url: finops/google-cloud-healthcare-finops.yml
   - type: Website
     url: https://www.google.com/
   - type: CapabilityMap
