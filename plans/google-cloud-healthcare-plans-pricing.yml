@@ -1,3 +1,8 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (dated 2026-06-13 by the file itself), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
+generated: '2026-06-13'
 specification: API Commons Plans
 specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
@@ -323,3 +328,65 @@ plans:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - metered
+  units:
+  - data
+  - money
+  plans:
+  - name: Free Credits (New Customers)
+    access: freemium
+    model: free
+    model_how: derived
+    units:
+    - money
+    periods:
+    - one-time
+  - name: FHIR Store - Usage-Based
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - data
+    periods:
+    - month
+    - per-use
+  - name: HL7v2 Store - Usage-Based
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - data
+    periods:
+    - month
+    - per-use
+  - name: DICOM Store - Usage-Based
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - data
+    periods:
+    - month
+    - per-use
+  - name: De-identification - Usage-Based
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - other
+    periods:
+    - month
+    - per-use
+  - name: Consent Management - Usage-Based
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - other
+    periods:
+    - month
