@@ -109,6 +109,12 @@ apis:
   - HL7v2
   - Clinical Messaging
   - Healthcare Integration
+  - Electronic Health Records
+  - Hospital Systems
+  tags_raw:
+  - HL7v2
+  - Clinical Messaging
+  - Healthcare Integration
   - EHR
   - Hospital Systems
   properties:
