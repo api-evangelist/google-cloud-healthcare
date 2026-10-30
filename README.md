@@ -64,62 +64,183 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-APIs.json 0.19 provider profile for the Google Cloud Healthcare API.
+Google Cloud Healthcare API is a fully managed, HIPAA-eligible service for ingesting, storing, analyzing, and integrating healthcare data in the cloud. It provides native support for FHIR R4 (Fast Healthcare Interoperability Resources), HL7v2 clinical event messaging, and DICOM medical imaging standards, along with automated de-identification of protected health information (PHI). The API enables healthcare organizations to build interoperable data pipelines, connect clinical systems, and power machine learning applications on Google Cloud infrastructure.
 
-**Base URL:** `https://healthcare.googleapis.com`  
-**Provider ID:** `google-cloud-healthcare`
+**Areas:** Healthcare · FHIR · HL7v2 · DICOM · Medical Imaging · De-Identification · Interoperability · Cloud
 
-## Overview
+## Google Cloud Healthcare on APIs.io
 
-Google Cloud Healthcare API is a fully managed, HIPAA-eligible service for ingesting, storing, analyzing, and integrating healthcare data in the cloud. It provides native support for industry-standard healthcare formats and protocols used across clinical, administrative, and medical imaging systems.
+Everything profiled for Google Cloud Healthcare is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-cloud-healthcare/](https://apis.io/providers/google-cloud-healthcare/)** — or go straight to one of the APIs or properties below.
 
-## APIs Cataloged
+### APIs (6)
 
-| API | Standard | Description |
-|-----|----------|-------------|
-| Cloud Healthcare FHIR API | FHIR R4 / STU3 / DSTU2 | RESTful FHIR resource management, search, bulk export |
-| Cloud Healthcare HL7v2 API | HL7 v2.x | Clinical event message ingestion, routing, and retrieval |
-| Cloud Healthcare DICOM API | DICOM / DICOMweb | Medical imaging storage, STOW-RS, WADO-RS, QIDO-RS |
-| Cloud Healthcare De-identification API | HIPAA Safe Harbor | PHI/PII redaction for FHIR, DICOM, and unstructured text |
-| Cloud Healthcare Consent Management API | Patient consent | Fine-grained patient and admin consent policy enforcement |
+- [Cloud Healthcare FHIR API](https://apis.io/apis/google-cloud-healthcare/healthcare-fhir/) — The Cloud Healthcare FHIR API provides a fully managed implementation of the HL7 FHIR standard (supporting DSTU2, STU3, and R4 versions) for storing and…
+- [Cloud Healthcare HL7v2 API](https://apis.io/apis/google-cloud-healthcare/healthcare-hl7v2/) — The Cloud Healthcare HL7v2 API provides managed ingestion, storage, and retrieval of HL7 version 2.x messages, which are the most widely used standard for…
+- [Cloud Healthcare DICOM API](https://apis.io/apis/google-cloud-healthcare/healthcare-dicom/) — The Cloud Healthcare DICOM API implements the DICOMweb standard for storing, querying, and retrieving medical imaging data including X-rays, CT scans, MRIs,…
+- [Cloud Healthcare De-identification API](https://apis.io/apis/google-cloud-healthcare/healthcare-deidentify/) — The Cloud Healthcare De-identification API provides automated redaction and transformation of protected health information (PHI) and personally identifiable…
+- [Cloud Healthcare Consent Management API](https://apis.io/apis/google-cloud-healthcare/healthcare-consent/) — The Cloud Healthcare Consent Management API provides fine-grained, patient-centric consent management for healthcare data access. It enables organizations…
+- [Google Cloud Healthcare Projects API](https://apis.io/apis/google-cloud-healthcare/google-cloud-healthcare-projects-api/) — The projects API from Google Cloud Healthcare — 111 operation(s) for projects.
 
-## Key Features
+### Published properties
 
-- **HIPAA Eligible:** Covered under Google Cloud's HIPAA Business Associate Agreement
-- **Standards Compliant:** FHIR R4, HL7v2, DICOMweb (WADO-RS, STOW-RS, QIDO-RS)
-- **Bulk Operations:** Import/export to Cloud Storage and BigQuery
-- **Event-Driven:** Pub/Sub notifications for real-time data pipeline integration
-- **De-identification:** Automated PHI redaction with configurable profiles
-- **Compliance:** ISO 27001, 27017, 27018; PCI DSS; 99.999999999% annual durability
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Authentication
+#### Agentic access (1)
 
-The Cloud Healthcare API uses Google Cloud IAM for authentication and authorization. Clients must present valid OAuth 2.0 credentials or service account keys. Detailed guidance: https://cloud.google.com/healthcare-api/docs/how-tos/authentication
+Which operations an agent can call, which act, and which need a human in the loop.
 
-## Resource Hierarchy
+- [Google Cloud Healthcare Agentic Access](https://apis.io/agentic-access/google-cloud-healthcare/google-cloud-healthcare-agentic-access/)
 
-```
-projects/{project}/locations/{location}/datasets/{dataset}/
-  fhirStores/{fhir_store}/
-  hl7V2Stores/{hl7v2_store}/
-  dicomStores/{dicom_store}/
-  consentStores/{consent_store}/
-```
+#### JSON Schema (147)
 
-## Artifacts
+The data models the API reads and writes.
 
-| Path | Description |
-|------|-------------|
-| `apis.yml` | APIs.json 0.19 provider index |
-| `plans/google-cloud-healthcare-plans-pricing.yml` | API Commons Plans — pricing tiers for FHIR, HL7v2, DICOM, de-identification, consent |
-| `rate-limits/google-cloud-healthcare-rate-limits.yml` | API Commons Rate Limits — quotas, request size limits, policies |
-| `finops/google-cloud-healthcare-finops.yml` | FinOps Framework / FOCUS-aligned cost management guide |
+- [ActivateConsentRequest](https://apis.io/schemas/google-cloud-healthcare/ActivateConsentRequest/)
+- [AnalyzeEntitiesRequest](https://apis.io/schemas/google-cloud-healthcare/AnalyzeEntitiesRequest/)
+- [AnalyzeEntitiesResponse](https://apis.io/schemas/google-cloud-healthcare/AnalyzeEntitiesResponse/)
+- [ArchiveUserDataMappingRequest](https://apis.io/schemas/google-cloud-healthcare/ArchiveUserDataMappingRequest/)
+- [ArchiveUserDataMappingResponse](https://apis.io/schemas/google-cloud-healthcare/ArchiveUserDataMappingResponse/)
+- [Attribute](https://apis.io/schemas/google-cloud-healthcare/Attribute/)
+- [AttributeDefinition](https://apis.io/schemas/google-cloud-healthcare/AttributeDefinition/)
+- [AuditConfig](https://apis.io/schemas/google-cloud-healthcare/AuditConfig/)
+- [AuditLogConfig](https://apis.io/schemas/google-cloud-healthcare/AuditLogConfig/)
+- [Binding](https://apis.io/schemas/google-cloud-healthcare/Binding/)
+- [CancelOperationRequest](https://apis.io/schemas/google-cloud-healthcare/CancelOperationRequest/)
+- [CharacterMaskConfig](https://apis.io/schemas/google-cloud-healthcare/CharacterMaskConfig/)
+- [CheckDataAccessRequest](https://apis.io/schemas/google-cloud-healthcare/CheckDataAccessRequest/)
+- [CheckDataAccessResponse](https://apis.io/schemas/google-cloud-healthcare/CheckDataAccessResponse/)
+- [Consent](https://apis.io/schemas/google-cloud-healthcare/Consent/)
+- [ConsentArtifact](https://apis.io/schemas/google-cloud-healthcare/ConsentArtifact/)
+- [ConsentEvaluation](https://apis.io/schemas/google-cloud-healthcare/ConsentEvaluation/)
+- [ConsentList](https://apis.io/schemas/google-cloud-healthcare/ConsentList/)
+- [ConsentStore](https://apis.io/schemas/google-cloud-healthcare/ConsentStore/)
+- [CreateMessageRequest](https://apis.io/schemas/google-cloud-healthcare/CreateMessageRequest/)
+- [CryptoHashConfig](https://apis.io/schemas/google-cloud-healthcare/CryptoHashConfig/)
+- [Dataset](https://apis.io/schemas/google-cloud-healthcare/Dataset/)
+- [DateShiftConfig](https://apis.io/schemas/google-cloud-healthcare/DateShiftConfig/)
+- [DeidentifiedStoreDestination](https://apis.io/schemas/google-cloud-healthcare/DeidentifiedStoreDestination/)
+- [DeidentifyConfig](https://apis.io/schemas/google-cloud-healthcare/DeidentifyConfig/)
+- …and 122 more published on APIs.io
 
-## Links
+#### Examples (6)
 
-- **Documentation:** https://cloud.google.com/healthcare-api/docs
-- **REST Reference:** https://cloud.google.com/healthcare-api/docs/reference/rest
-- **Pricing:** https://cloud.google.com/healthcare-api/pricing
-- **Quotas:** https://cloud.google.com/healthcare-api/quotas
-- **Status:** https://status.cloud.google.com
-- **GitHub (googleapis):** https://github.com/googleapis
+Example requests and responses.
+
+- [Consentstore Example](https://apis.io/examples/google-cloud-healthcare/ConsentStore-example/)
+- [Dataset Example](https://apis.io/examples/google-cloud-healthcare/Dataset-example/)
+- [Dicomstore Example](https://apis.io/examples/google-cloud-healthcare/DicomStore-example/)
+- [Fhirstore Example](https://apis.io/examples/google-cloud-healthcare/FhirStore-example/)
+- [Hl7V2Store Example](https://apis.io/examples/google-cloud-healthcare/Hl7V2Store-example/)
+- [Message Example](https://apis.io/examples/google-cloud-healthcare/Message-example/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [Cloud Healthcare projects API](https://apis.io/collections/google-cloud-healthcare/open-google-cloud-healthcare-projects-api/)
+- [Cloud Healthcare projects API](https://apis.io/collections/google-cloud-healthcare/postman-google-cloud-healthcare-projects-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Cloud Healthcare — jsonschema rules](https://apis.io/rules/google-cloud-healthcare/google-cloud-healthcare-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Cloud Healthcare Authentication](https://apis.io/security/google-cloud-healthcare/google-cloud-healthcare-authentication/)
+- [Google Cloud Healthcare Domain Security](https://apis.io/security/google-cloud-healthcare/google-cloud-healthcare-domain-security/)
+- [Google Cloud Healthcare Vulnerability Disclosure](https://apis.io/security/google-cloud-healthcare/google-cloud-healthcare-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Cloud Healthcare Scopes](https://apis.io/scopes/google-cloud-healthcare/google-cloud-healthcare-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Cloud Healthcare Plans Pricing](https://apis.io/plans/google-cloud-healthcare/google-cloud-healthcare-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Cloud Healthcare Rate Limits](https://apis.io/rate-limits/google-cloud-healthcare/google-cloud-healthcare-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Cloud Healthcare Finops](https://apis.io/finops/google-cloud-healthcare/google-cloud-healthcare-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
+- [Getting started](https://cloud.google.com/healthcare-api/docs/quickstart)
+- [Pricing](https://cloud.google.com/healthcare-api/pricing)
+- [Support](https://cloud.google.com/healthcare-api/docs/support)
+- [Compliance](https://cloud.google.com/healthcare-api/docs/concepts/hipaa)
+- [GitHub](https://github.com/googleapis)
+- [Status](https://status.cloud.google.com)
+
+## API Evangelist rating
+
+**Kin Score 43.5** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 47.1 |
+| Contract governance | 9.8 |
+| Operational transparency | 52.6 |
+| Developer ergonomics | 53.6 |
+| Access clarity | 18.4 |
+
+**Agent readiness 26.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | — |
+
+**Regulatory alignment 27.3** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-cloud-healthcare/](https://apis.io/providers/google-cloud-healthcare/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Cloud Healthcare: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-cloud-healthcare/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
